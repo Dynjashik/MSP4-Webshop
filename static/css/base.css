@@ -21,6 +21,7 @@ body {
 
 .logo-font {
   text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .main-logo-link {
@@ -89,3 +90,14 @@ body {
 	background: white;
 	z-index: -1;
 }
+
+/* add more padding for header on mobile */
+@media (max-width: 991px) {
+  .header-container {
+      padding-top: 116px;
+  }
+
+  body {
+      height: calc(100vh - 116px);
+  }
+} 
