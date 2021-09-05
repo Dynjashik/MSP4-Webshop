@@ -2,6 +2,9 @@ from django.db import models
 
 
 class SkillCategory(models.Model):
+    class Meta:
+        verbose_name_plural = 'Skill categories'
+
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
@@ -13,6 +16,9 @@ class SkillCategory(models.Model):
 
 
 class EnvCategory(models.Model):
+    class Meta:
+        verbose_name_plural = 'Env categories'
+
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
