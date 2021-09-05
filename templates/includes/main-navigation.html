@@ -13,40 +13,29 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="skills-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Skills
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">Teething</a>
-                <a href="" class="dropdown-item">Hearing</a>
-                <a href="" class="dropdown-item">Watching</a>
-                <a href="" class="dropdown-item">Touching</a>
-                <a href="" class="dropdown-item">Walking</a>
-
+            <div class="dropdown-menu border-0" aria-labelledby="skills-link">
+                <a href="{% url 'products' %}?skill-category=teething" class="dropdown-item">Teething</a>
+                <a href="{% url 'products' %}?skill-category=hearing" class="dropdown-item">Hearing</a>
+                <a href="{% url 'products' %}?skill-category=shaking" class="dropdown-item">Shaking</a>
+                <a href="{% url 'products' %}?skill-category=touching" class="dropdown-item">Touching</a>
+                <a href="{% url 'products' %}?skill-category=walking" class="dropdown-item">Walking</a>
+                <a href="{% url 'products' %}?skill-category=teething,hearing,shaking,touching,walking" class="dropdown-item">All Skills</a>
             </div>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="homeware-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="env-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Environment
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="" class="dropdown-item">Bed</a>
-                <a href="" class="dropdown-item">Indoor</a>
-                <a href="" class="dropdown-item">Outdoor</a>
-                <a href="" class="dropdown-item">Bath</a>
-            </div>
-        </li>
-
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Special Offers
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">New Arrivals</a>
-                <a href="" class="dropdown-item">Deals</a>
-                <a href="" class="dropdown-item">Clearance</a>
-                <a href="" class="dropdown-item">All Specials</a>
+            <div class="dropdown-menu border-0" aria-labelledby="env-link">
+                <a href="{% url 'products' %}?env-category=bed" class="dropdown-item">Bed</a>
+                <a href="{% url 'products' %}?env-category=indoor" class="dropdown-item">Indoor</a>
+                <a href="{% url 'products' %}?env-category=outdoor" class="dropdown-item">Outdoor</a>
+                <a href="{% url 'products' %}?env-category=bath" class="dropdown-item">Bath</a>
+                <a href="{% url 'products' %}?env-category=bath,bed,indoor,outdoor" class="dropdown-item">All Environment</a>
             </div>
         </li>
     </ul>
