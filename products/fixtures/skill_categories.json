@@ -1,0 +1,42 @@
+[
+	{
+		"pk": 1,
+		"model": "products.skillcategory",
+		"fields": {
+			"name": "teething",
+			"friendly_name": "Teething"
+		}
+	},
+	{
+		"pk": 2,
+		"model": "products.skillcategory",
+		"fields": {
+			"name": "hearing",
+			"friendly_name": "Hearing"
+		}
+	},
+	{
+		"pk": 3,
+		"model": "products.skillcategory",
+		"fields": {
+			"name": "shaking",
+			"friendly_name": "Shaking"
+		}
+	},
+	{
+		"pk": 4,
+		"model": "products.skillcategory",
+		"fields": {
+			"name": "touching",
+			"friendly_name": "Touching"
+		}
+	},
+	{
+		"pk": 5,
+		"model": "products.skillcategory",
+		"fields": {
+			"name": "walking",
+			"friendly_name": "Walking"
+		}
+	}
+]

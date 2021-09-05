@@ -1,0 +1,114 @@
+[
+	{
+		"pk": 1,
+		"model": "products.product",
+		"fields": {
+			"name": "Nuby Ice Gel Teether Keys",
+			"description": "Multi-surface teething makes this teether perfect for assisting in the eruption of front, middle and back teeth. When place in the refrigerator Nuby's PurICE technology provides gentle cooling on baby's gums. Age: 3 months and above; BPA Free",
+			"price": 5.6,
+			"skill_category": 1,
+			"env_category": 2,
+			"rating": 0,
+			"image_url": "https://m.media-amazon.com/images/I/81A40fe4mtL._SL1500_.jpg",
+			"image": "baby-toy.jpg"
+		}
+	},
+	{
+		"pk": 2,
+		"model": "products.product",
+		"fields": {
+			"name": "Fisher-Price Pizza Slice Teether",
+			"description": "Pizza teether toy for babies 3 months and older. Soft, crinkly vegetable pizza fosters tactile and auditory skills. Helps baby develop dexterity and hand-eye coordination",
+			"price": 4.99,
+			"skill_category": 1,
+			"env_category": 1,
+			"rating": 0,
+			"image_url": "https://target.scene7.com/is/image/Target/GUEST_05dbcef1-b693-425d-8e45-89ff14c79b51?fmt=webp&wid=1400&qlt=80",
+			"image": "baby-toy.jpg"
+		}
+	},
+	{
+		"pk": 3,
+		"model": "products.product",
+		"fields": {
+			"name": "Fisher-Price Calming Vibes Hedgehog Soother",
+			"description": "​Portable, snuggly hedgehog soother for babies from birth. ​5 Sensory Discoveries to engage your baby’s senses of hearing and touch. 10 minutes of gentle music and sounds, plus volume control, and calming vibrations.",
+			"price": 14.99,
+			"skill_category": 2,
+			"env_category": 4,
+			"rating": 0,
+			"image_url": "https://target.scene7.com/is/image/Target/GUEST_aa6a14a0-d1e1-4184-a31a-f9e06a3a279b?fmt=webp&wid=1400&qlt=80",
+			"image": "baby-toy.jpg"
+		}
+	},
+	{
+		"pk": 4,
+		"model": "products.product",
+		"fields": {
+			"name": "Skip Hop Explore & More Egg Shakers",
+			"description": "Three pieces: Owl, Hedgehog and Fox. Each shaker makes its own unique sound. Easy-to-hold design for little hands",
+			"price":9.99,
+			"skill_category": 2,
+			"env_category": 2,
+			"rating": 0,
+			"image_url": "https://target.scene7.com/is/image/Target/GUEST_da21dbb7-2c7d-44de-b23d-45a6e3ecd11e?fmt=webp&wid=1400&qlt=80",
+			"image": "baby-toy.jpg"
+		}
+	},
+	{
+		"pk": 5,
+		"model": "products.product",
+		"fields": {
+			"name": "The First Years Spin and Smile Spinning Baby Rattle",
+			"description": "The ideal size for babies to grab and hold, the rattle is great for promoting fine motor skill development. This baby rattle also features a textured ring for baby to explore which helps stimulate tactile development and sensory processing. The bright cheerful colors engage and stimulate baby's attention and visual perception while the spinning center creates fun rattle sounds.",
+			"price": 7.6,
+			"skill_category": 3,
+			"env_category": 2,
+			"rating": 0,
+			"image_url": "https://i5.walmartimages.com/asr/ce81f92d-ce21-437d-9d8d-1001822aa468_1.97d8fe264d87375b03d396083974abff.jpeg?odnWidth=undefined&odnHeight=undefined&odnBg=ffffff",
+			"image": "baby-toy.jpg"
+		}
+	},
+	{
+		"pk": 6,
+		"model": "products.product",
+		"fields": {
+			"name": "Oball Jingle & Shake Pal Easy-Grasp Rattle",
+			"description": "Ribbit, rattle and roll, baby! The Oball Jingle & Shake Pal is sure to bring leaps and bounds of fun to your little one. This friendly frog is made for play, even down to his tiny toes – made of colorful beads for your baby to spin! The chiming ball nestled inside will fascinate your baby, and he’ll love to shake up the noise. ",
+			"price": 3.68,
+			"skill_category": 3,
+			"env_category": 4,
+			"rating": 0,
+			"image_url": "https://i5.walmartimages.com/asr/fb70d53b-6b1e-4f5e-b72b-075fc65f1623_1.cf09ca7685b87e7092fb080571246b30.jpeg?odnWidth=undefined&odnHeight=undefined&odnBg=ffffff",
+			"image": "baby-toy.jpg"
+		}
+	},
+	{
+		"pk": 7,
+		"model": "products.product",
+		"fields": {
+			"name": "Infantino Textured Multi Ball 6 Piece Set",
+			"description": "Easy-to-grab, bright and textured design for babies to develop tactile senses while having fun. Soft and textured material featuring 6 varied sizes and shapes which encourages baby to reach, bat, grab and enjoy sensory play.",
+			"price": 4.65,
+			"skill_category": 4,
+			"env_category": 4,
+			"rating": 0,
+			"image_url": "https://m.media-amazon.com/images/I/710Zp5mvC+L._AC_SL1500_.jpg",
+			"image": "baby-toy.jpg"
+		}
+	},
+	{
+		"pk": 8,
+		"model": "products.product",
+		"fields": {
+			"name": "Brio Toddler Wobbler",
+			"description": "The Toddler Wobbler has an adjustable handle and brake so it can adapt to your child's progress, and rubber non-skid wheels that help keep it under control without marring floor surfaces. It's made from solid beech wood and painted to a vibrant, glossy finish. Perfect for early walkers - Help your toddler develop their walking skills with a toddler wobbler to help them balance.",
+			"price": 52.44,
+			"skill_category": 5,
+			"env_category": 3,
+			"rating": 0,
+			"image_url": "https://m.media-amazon.com/images/I/41XPJhEjXIS._AC_SL1024_.jpg",
+			"image": "baby-toy.jpg"
+		}
+	}
+]
