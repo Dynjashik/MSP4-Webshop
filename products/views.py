@@ -22,6 +22,12 @@ def all_products(request):
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
 
+            # force to sort categories by name instead of ids
+            if sortkey == 'skill_category':
+                sortkey == 'skill_category__name'
+            if sortkey == 'env_category':
+                sortkey == 'env_category__name'
+
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
