@@ -11,8 +11,23 @@ def all_products(request):
     query = None
     skill_categories = None
     env_categories = None
+    sort = None
+    direction = None
 
     if request.GET:
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                products = products.annotate(lower_name=Lower('name'))
+
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            products = products.order_by(sortkey)
+
         if 'skill-category' in request.GET:
             skill_categories = request.GET['skill-category'].split(',')
             products = products.filter(skill_category__name__in=skill_categories)
@@ -32,10 +47,13 @@ def all_products(request):
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
+    current_sorting = f'{sort}_{direction}'
+
     context = {'products': products,
                'search_term': query,
                'curr_skill_categories': skill_categories,
-               'curr_env_categories': env_categories, }
+               'curr_env_categories': env_categories,
+               'current_sorting': current_sorting, }
 
     return render(request, 'products/products.html', context)
 
