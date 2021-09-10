@@ -24,7 +24,6 @@
             <div class="col">
                 {% if bag_items %}
                     <div class="table-responsive rounded">
-                        {{ bag_items }}
                         <table class="table table-sm table-borderless">
                             <thead class="text-black">
                                 <tr>
@@ -35,6 +34,8 @@
                                     <th scope="col">Subtotal</th>
                                 </tr>
                             </thead>
+
+                            {% for item in bag_items %}
                                 <tr>
                                     <td class="p-3 w-25">
                                         <img class="img-fluid rounded" src="{{ item.product.image_url }}">
