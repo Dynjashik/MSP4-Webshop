@@ -115,8 +115,10 @@ a.cat-badge > span.badge:hover {
   right: 10px;
 }
 
-.btt-link {
-  cursor: pointer;
+.btt-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
 }
 
 .btn-outline-black {
