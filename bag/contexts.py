@@ -22,14 +22,14 @@ def bag_contents(request):
         })
 
     delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
-    sum_total = delivery + total
+    grand_total = delivery + total
 
     context = {
         'bag_items': bag_items,
         'total': total,
         'product_count': product_count,
         'delivery': delivery,
-        'sum_total': sum_total,
+        'grand_total': grand_total,
     }
 
     return context
