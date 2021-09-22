@@ -13,14 +13,43 @@
     <div class="overlay"></div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12">
                 <hr>
-                <h2 class="logo-font mb-4">News</h2>
+                <h2 class="logo-font mb-4 text-center">Latest News</h2>
                 <hr>
             </div>
         </div>
         <div class="row">
-            {{news_in_html}}
+            <div class="col-10 offset-1">
+                <ul class="timeline">
+                {% for news_item in news %}
+                    <li>
+                        <div class="news-header">
+                            <a target="_blank" href="#">{{ news_item.title }}</a>
+                            <a href="#" class="float-right">{{ news_item.date_added }}</a>
+                        </div>
+                        {% if request.user.is_superuser %}
+                        <small>
+                            <a href="">Edit</a> |
+                            <a class="text-danger" href="">Delete</a>
+                        </small>
+                        {% endif %}
+                        <div class="row news-body">
+                            <div class="col-md-4 col-sm-12">
+                            {% if news_item.image %}
+                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}{{ news_item.image }}" alt="{{ news_item.title }}">
+                            {% else %}
+                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no-image.jpg" alt="{{ news_item.title }}">
+                            {% endif %}
+                            </div>
+                            <div class="col-md-8 col-sm-12">
+                                <p>{{ news_item.description }}</p>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
         </div>
     </div>
 {% endblock %}
