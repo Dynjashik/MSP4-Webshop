@@ -49,7 +49,29 @@ def add_news_item(request):
 def edit_news_item(request, news_id):
     """ Edit news item """
 
-    return redirect(reverse('news'))
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    news_item = get_object_or_404(News, pk=news_id)
+    if request.method == 'POST':
+        form = NewsForm(request.POST, request.FILES, instance=news_item)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated "' + news_item.title + '" article!')
+            return redirect(reverse('news'))
+        else:
+            messages.error(request, 'Failed to update "' + news_item.title + '" news article. Please ensure the form is valid.')
+    else:
+        form = NewsForm(instance=news_item)
+        messages.info(request, f'You are editing "{news_item.title}" article')
+
+    template = 'news/edit_news.html'
+    context = {
+        'form': form,
+        'news_item': news_item,
+    }
+    return render(request, template, context)
 
 
 @login_required
