@@ -5,7 +5,7 @@ class News(models.Model):
     class Meta:
         verbose_name_plural = 'News'
 
-    title = models.CharField(max_length=254)
+    title = models.CharField(max_length=254, null=False, blank=False)
     description = models.TextField()
     date_added = models.DateTimeField(null=False, blank=False)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
