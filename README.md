@@ -40,3 +40,44 @@ The website has clear and simple design that allows users to quickly navigate an
 
 Website admins (or superusers) has access to extended rights & functionality: manage products, news blog and contact requests. 
 
+## User Stories
+
+As a user I would like to:
+
+### Navigation
+- **Easily understand the purpose of the website** so that **I can decide if it is relevant to me**
+- **Have simple and self-explanatory navigation tools** so that I can **find products fast**
+- **View multiple amount of products at once** so that I can **compare them and quicker choose the one I need**
+- **View each product separately** so that I can **share a link to the product with others**
+- **Be able to sort products by price** so that I can **easily compare product prices and find the cheapest products quicker**
+- **Be able to filter products by type of environment where they are reccommended to be used** so that I can **make right decisions based on my needs**
+- **Get responsive feedback from the web store on my actions** so that I am **aware of correctness of my actions**.
+
+### User account
+- **Register and account** so that I can **have my personal account**
+- **Login and logout** so that I can **easily access my personal information**
+- **Recover my password** so that I can **get access to my personal account in case pasword was forgotten**
+- **Recieve an email after registration** so that I can **be sure that my account was registered successfully**
+- **Have my personal profile page** so that I can **manage my payment/billing information and view order history**
+
+### Shopping bag
+- **Be able add products to shopping bag** so that I can **make a purchase when I am ready**
+- **See an overview of all added products** so that I can **make sure that I did everything correct**
+- **Modify quantity and remvoe products in my shopping bag** so that I can **make corrections to my order before making a payment**
+- **Add delivery information** so that I can **recieve products to the specified address after making a payment**
+
+### Payment and checkout
+- **Make a payment for products that are in my shopping bag** so that I can **recieve chosen products to the specified address**
+- **Recieve a confirmation email with all of the order details** so that I can **have all the required information in case if emergency**
+
+
+### News and Contact
+- **Contact the store owners** so that I can **leave my feedback/suggestion/complaint regarding my expierence using the site**
+- **Be able to read latest updates from store admins** so that I can **be aware of all the latest news**
+
+As a store owner I would like to:
+
+- **Add/modify/delete products** so that I can **be flexible and manage products that are avaialbe for purchase on the site**
+- **Add/modify/delete news articles** so I can **update customers with any important information**
+- **Read messages submitted by contact form** so that I can **act on cutomer's feedback appropriately**.
+
