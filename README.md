@@ -40,6 +40,8 @@ The website has clear and simple design that allows users to quickly navigate an
 
 Website admins (or superusers) has access to extended rights & functionality: manage products, news blog and contact requests. 
 
+<span  id="userstories"></span>
+
 ## User Stories
 
 As a user I would like to:
