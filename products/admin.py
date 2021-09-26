@@ -8,13 +8,19 @@ class ProductAdmin(admin.ModelAdmin):
         'name',
         'description',
         'price',
-        'skill_category',
-        'env_category',
+        'skill_categories',
+        'env_categories',
         'image',
         'image_url'
     )
 
     ordering = ('name',)
+
+    def skill_categories(self, obj):
+        return "\n".join([p["name"] for p in obj.skill_category.values()])
+
+    def env_categories(self, obj):
+        return "\n".join([p["name"] for p in obj.env_category.values()])
 
 class SkillCategoryAdmin(admin.ModelAdmin):
     list_display = (
