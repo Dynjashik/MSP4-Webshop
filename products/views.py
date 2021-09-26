@@ -55,7 +55,7 @@ def all_products(request):
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
-    current_sorting = f'{sort}_{direction}'
+    current_sorting = f'{sort}-{direction}'
 
     context = {'products': products,
                'search_term': query,
@@ -70,7 +70,12 @@ def product_detail(request, product_id):
     """A view to show individual product details"""
 
     product = get_object_or_404(Product, pk=product_id)
-    context = {'product': product, }
+    skill_cats = product.skill_category.values()
+    env_cats = product.env_category.values()
+
+    context = {'product': product,
+               'skill_categories': skill_cats,
+               'env_categories': env_cats }
 
     return render(request, 'products/product_detail.html', context)
 

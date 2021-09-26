@@ -36,20 +36,28 @@
                     <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
                     {% if product.skill_category %}
                         <p class="small mt-1 mb-0">
-                            <a class="text-muted" href="{% url 'products' %}?category={{ product.skill_category.name }}">
-                                <i class="fas fa-tag mr-1"></i>{{ product.skill_category.friendly_name }}
+                            <i class="fas fa-baby mr-1"></i>
+                            {% for category in product.skill_category.values %}
+                            <a class="text-muted" href="{% url 'products' %}?skill-category={{ category.name }}">
+                                {{ category.friendly_name }}
                             </a>
+                            {% endfor %}
                         </p>
                     {% endif %}
+
                     {% if product.env_category %}
                         <p class="small mt-1 mb-0">
-                            <a class="text-muted" href="{% url 'products' %}?category={{ product.env_category.name }}">
-                                <i class="fas fa-tag mr-1"></i>{{ product.env_category.friendly_name }}
+                            <i class="fas fa-street-view mr-1"></i>
+                            {% for category in product.env_category.values %}
+                            <a class="text-muted" href="{% url 'products' %}?env-category={{ category.name }}">
+                                {{ category.friendly_name }}
                             </a>
+                            {% endfor %}
                         </p>
                     {% endif %}
+
                     {% if request.user.is_superuser %}
-                        <small class="ml-3">
+                        <small>
                             <a href="{% url 'edit_product' product.id %}">Edit</a> | 
                             <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
                         </small>

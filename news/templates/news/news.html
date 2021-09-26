@@ -25,8 +25,8 @@
                 {% for news_item in news %}
                     <li>
                         <div class="news-header">
-                            <a target="_blank" href="#">{{ news_item.title }}</a>
-                            <a href="#" class="float-right">{{ news_item.date_added }}</a>
+                            <h3 class="news-title">{{ news_item.title }}</h3>
+                            <h6 class="news-date">{{ news_item.date_added }}</h6>
                         </div>
                         {% if request.user.is_superuser %}
                         <small>
@@ -52,16 +52,18 @@
                         </small>
                         {% endif %}
                         <div class="row news-body">
-                            <div class="col-md-4 col-sm-12">
                             {% if news_item.image %}
-                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}{{ news_item.image }}" alt="{{ news_item.title }}">
-                            {% else %}
-                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no-image.jpg" alt="{{ news_item.title }}">
-                            {% endif %}
+                            <div class="col-md-4 col-sm-12">
+                                <img class="card-img-top img-fluid news-img" src="{{ MEDIA_URL }}{{ news_item.image }}" alt="{{ news_item.title }}">
                             </div>
                             <div class="col-md-8 col-sm-12">
                                 <p>{{ news_item.description }}</p>
                             </div>
+                            {% else %}
+                            <div class="col-md-12 col-sm-12">
+                                <p>{{ news_item.description }}</p>
+                            </div>
+                            {% endif %}
                         </div>
                     </li>
                 {% endfor %}
