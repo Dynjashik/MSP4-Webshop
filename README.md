@@ -21,6 +21,12 @@
 8.  <a  href="#testing">**Testing**</a>
 
 9.  <a  href="#deployment">**Deployment**</a>
+    * <a  href="#deploy-heroku-aws">**Heroku & AWS**</a>
+        * <a  href="#deploy-heroku">**Heroku**</a>
+        * <a  href="#deploy-aws">**AWS**</a>
+        * <a  href="#deploy-stripe-email">**Stripe & Email**</a>
+    * <a  href="#deploy-gitpod">**Gitpod**</a>
+    
 
 10. <a  href="#database">**Database**</a>
 
@@ -138,6 +144,7 @@ Authentication functionality that makes it possible to login/register for users.
 <span  id="deployment"></span>
 ## Deployment
 
+<span  id="deploy-heroku-aws"></span>
 ### Heroku & AWS
 Instructions below describe how to deploy this project using Heroku and Amazon Web Services (AWS).
 
@@ -152,6 +159,7 @@ pip install -r requirements.txt
 This deployment process is designed to use fixtures in order to load data to the database.
 You should update JSON files in _fixtures/_ directory with your own custom data if required.
 
+<span  id="deploy-heroku"></span>
 #### Heroku
 
 ##### Create Heroku app
@@ -254,7 +262,7 @@ At this point you are finished setting up Heroku app.
 19. On you Heroku Dashboard go to _Deploy_ tab choose _Deployment method GitHub_ and choose your repository to connect.
 20. Once connected click _Enable Automatic Deploys_.
 
-
+<span  id="deploy-aws"></span>
 #### Amazon Web Services (AWS)
 
 AWS is used to host static and media files.
@@ -293,7 +301,7 @@ AWS is used to host static and media files.
 13. Save _Bucket ARN_ somewhere. You will need it several times in the future during this instructions.
 14. Navigate to _Edit_ -> _Policy Generator_:
    * Type of Policy - S3 Bucket Policy
-   * Principal - * 
+   * Principal - \* 
    * Actions - GetObject
    * Amazon Resource Name (ARN) - Bucket ARN from step #13
 13. Click _Add Statement_, then _Generate Policy_, copy configuration settings from the popup window
@@ -309,7 +317,7 @@ Create Group and attach Policy
 18. Click _Policy_ -> _Create Policy_.
 19. Change to JSON tab, click _Import managed policy_
 20. Search for _S3FullAccess_ policy and import it.
-21. Change _*_ for _Resource_ key to _["<your_bucket_arn>", "<your_bucket_arn>*"]_ (<your_bucket_arn> from step #13).
+21. Change _\*_ for _Resource_ key to _["<your_bucket_arn>", "<your_bucket_arn>*"]_ (<your_bucket_arn> from step #13).
 22. Click _Review Policy_, give it a name/description and create policy.
 23. Go to your user group created earlier and under _Permissions_ tab attach a policy you just created.
 
@@ -332,6 +340,7 @@ Create User
 33. Go to your AWS Bucket dashboard and create media/ folder.
 34. Upload all of your images to that folder. Choose _Grant public read access_ under _Permissions_.
 
+<span  id="deploy-stripe-email"></span>
 #### Stripe & Email
 
 ##### Stripe
@@ -347,3 +356,43 @@ This project supports gmail account configuration.
 After you have all the settings set in your Gmail you need to add two Config Vars to Heroku:
   * EMAIL_HOST_USER: <your_email_address>
   * EMAIL_HOST_PASS: <password_generated_by_gmail>
+
+<span  id="deploy-gitpod"></span>
+### Gitpod
+
+1. Fork this project to your Github user.
+2. Go to profile settings on you gitpod accoint and click _Variables_.
+3. Add following environment variables with scope _\*/\*_ : 
+  * DEVELOPMENT = True
+  * SECRET_KEY = _<generated_key>_
+
+  _<generated_key>_ you can get [here](https://miniwebtool.com/django-secret-key-generator/)
+
+  * STRIPE_PUBLIC_KEY = <public_key_from_stripe>
+  * STRIPE_PRIVATE_KEY = <private_key_from_stripe>
+  * STRIPE_WH_SECRET = <secret_wh_from_stripe>
+
+   More infromation about stripe variables [here](#deploy-stripe-email)
+
+4. Navigate to _www.gitpod.io#<full_url_to_github_project>_ , this will initiate creating Gitpod workspace for your repo.
+5. Once workspace is created install all the dependencies:
+```
+pip install -r requirements.txt
+```
+
+6. Apply all migrations and load data using following commands:
+```
+python3 manage.py showmigrations
+python3 manage.py migrate
+python3 manage.py loaddata skill_categories
+python3 manage.py loaddata env_categories
+python3 manage.py loaddata products
+```
+7. Create superuser (admin) for your app by running the following command and follow instructions in the terminal:
+```
+python3 manage.py createsuperuser
+```
+8. Run the app using following command and click _Open Browser_ once it is running:
+```
+python3 manage.py runserver
+```
