@@ -33,9 +33,7 @@ def add_news_item(request):
         else:
             messages.error(request, 'Failed to news article. Please ensure the form is valid.')
     else:
-        myDate = datetime.now()
-        formatedDate = myDate.strftime("%Y-%m-%d %H:%M:%S")
-        form = NewsForm(initial={'date_added': formatedDate})
+        form = NewsForm()
 
     template = 'news/add_news.html'
     context = {

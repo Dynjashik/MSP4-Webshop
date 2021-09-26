@@ -13,6 +13,6 @@ class NewsForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['date_added'].widget.attrs['readonly'] = True
+        self.fields['title'].widget.attrs['autofocus'] = True
         for _, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black rounded-0'

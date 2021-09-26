@@ -12,6 +12,6 @@ class NewsAdmin(admin.ModelAdmin):
         'image_url'
     )
 
-    ordering = ('date_added',)
+    ordering = ('-date_added',)
 
 admin.site.register(News, NewsAdmin)
