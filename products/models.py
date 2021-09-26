@@ -35,7 +35,6 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     skill_category = models.ForeignKey('SkillCategory', null=True, blank=True, on_delete=models.SET_NULL)
     env_category = models.ForeignKey('EnvCategory', null=True, blank=True, on_delete=models.SET_NULL)
-    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
