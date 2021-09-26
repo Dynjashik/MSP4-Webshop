@@ -134,3 +134,216 @@ Authentication functionality that makes it possible to login/register for users.
 4. Add new News Articles to the site.
 5. Modify or delete existing News Articles on the site.
 6. View contact forms submitted by users.
+
+<span  id="deployment"></span>
+## Deployment
+
+### Heroku & AWS
+Instructions below describe how to deploy this project using Heroku and Amazon Web Services (AWS).
+
+Prerequisits:
+
+- Clone the repository and have the command line ready.
+- There are some dependencies that are specifically required for deploying an app to Heroku. In order to prevent any errors during deployment process install all libraries in requirements.txt file:
+```
+pip install -r requirements.txt
+```
+
+This deployment process is designed to use fixtures in order to load data to the database.
+You should update JSON files in _fixtures/_ directory with your own custom data if required.
+
+#### Heroku
+
+##### Create Heroku app
+1. Create an account [here](https://www.heroku.com/) and login.
+2. Start creating new application by clicking _New -> Create new app_.
+3. Give the app a unique name using lowercase letters, numbers and dashes.
+4. Choose a region closest to you.
+
+##### Create Heroku Database
+5. Switch to _Resources_ tab, use _Add-ons_ search field to find _Heroku Postgress_ addon and select it.
+6. Select a plan that fits you and proceed by clicking confirmation button.
+
+##### Load data to Heroku Database
+7. Run the following command in your terminal to avoid possible known problem before proceding to the next step:
+```
+unset PGHOSTADDR
+```
+8. We should temporarily make a change in _setting.py_ in order to load data from local environment to Heroku database:
+In settings.py change a piece of code from:
+```python
+  if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+    else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+```
+
+	to:
+
+```python
+  DATABASES = {
+    'default': dj_database_url.parse(_<your_db_url>_)
+  }
+```
+_<your_db_url>_ you can find in Config Vars under "Settings" tab at your Heroku dashboard.
+
+9. Run the following command to make sure that everything is set up correctly. You should see a printed list of apps and migration script name:"
+```
+python3 manage.py showmigrations
+```
+10. Run the following command to apply migrations and set up a database:
+```
+python3 manage.py migrate
+```
+11. Load data to the database from fixtures by running following commands in this specific order (products depend on categories):
+```
+python3 manage.py loaddata skill_categories
+python3 manage.py loaddata env_categories
+python3 manage.py loaddata products
+```
+12. Create superuser (admin) for your app by running the following command and follow instructions in the console:
+```
+python3 manage.py createsuperuser
+```
+13. Revert the changes made in step #8 in _settings.py_
+
+##### Add Config Vars to Heroku
+14. Go to _Setting_ tab on your Heroku dashboard and click _Reveal Config Vars_ in _Config Vars_ section. Add following variables:
+  * DISABLE_COLLECTSTATIC = 1 (disabling collecting static files by Heroku, we will remove it later)
+  * SECRET_KEY = _<generated_key>_
+  _<generated_key>_ you can get [here](https://miniwebtool.com/django-secret-key-generator/)
+
+##### Last steps
+
+15. Add name of your Heroku app to ALLOWED_HOSTS list in _settings.py_.
+16. Login to Heroku via command line:
+```
+heroku login
+```
+
+or without opening a browser
+
+```
+heroku login -i
+```
+17. Initialize Heroku git remote for your app:
+```
+heroku git:remote -a <name_of_your_app>
+```
+18. Push the app to Heroku:
+```
+git push heroku master
+```
+
+or
+
+```
+git push heroku
+```
+
+At this point you are finished setting up Heroku app.
+
+##### (Optional) Set automatic deployment to Heroku on every push to GitHub:
+19. On you Heroku Dashboard go to _Deploy_ tab choose _Deployment method GitHub_ and choose your repository to connect.
+20. Once connected click _Enable Automatic Deploys_.
+
+
+#### Amazon Web Services (AWS)
+
+AWS is used to host static and media files.
+
+##### Create S3 Bucket
+1. Create account [here](https://aws.amazon.com/).
+2. Login to your _AWS Management Console_.
+3. In search box type _S3_ and select _S3_ (Scalable Storage in the Cloud).
+4. Click _Create Bucket_.
+5. Type in a bucket name and select closest region to you.
+6. Uncheck _Block all public access_ checkbox and check _I aknowledge.._ popup message.
+7. Click _Create bucket_.
+
+##### Configure S3 Bucket
+8. Open your newly created bucket dashboard, go to _Properties_ tab and select to edit _Static website hosting_ option.
+9. Select option to host a static website, fill in default values like _index.html_/_error.html_ (we will not use them).
+10. Click _Save_
+11. Navigate to _Permissions_ tab -> _Cross-origin resource sharing (CORS)_ and add following configuration:
+```
+[
+  {
+      "AllowedHeaders": [
+          "Authorization"
+      ],
+      "AllowedMethods": [
+          "GET"
+      ],
+      "AllowedOrigins": [
+          "*"
+      ],
+      "ExposeHeaders": []
+  }
+]
+```
+12. Navigate to _Permissions_ tab -> _Bucket Policy_, 
+13. Save _Bucket ARN_ somewhere. You will need it several times in the future during this instructions.
+14. Navigate to _Edit_ -> _Policy Generator_:
+   * Type of Policy - S3 Bucket Policy
+   * Principal - * 
+   * Actions - GetObject
+   * Amazon Resource Name (ARN) - Bucket ARN from step #13
+13. Click _Add Statement_, then _Generate Policy_, copy configuration settings from the popup window
+14. Paste those settings to the Bucket Policy editor and add _/*_ in the end of _Resource_ key, click save.
+15. Navigate to _Permissions_ tab -> _Access Control List_, check _List_ objects to _Everyone (public access)_, click _Save_.
+
+##### Set user with Identity and Access Management (IAM)
+
+Create Group and attach Policy
+
+16. In your AWS Management Console in search box type _IAM_ and select _IAM_.
+17. Create new user group.
+18. Click _Policy_ -> _Create Policy_.
+19. Change to JSON tab, click _Import managed policy_
+20. Search for _S3FullAccess_ policy and import it.
+21. Change _*_ for _Resource_ key to _["<your_bucket_arn>", "<your_bucket_arn>*"]_ (<your_bucket_arn> from step #13).
+22. Click _Review Policy_, give it a name/description and create policy.
+23. Go to your user group created earlier and under _Permissions_ tab attach a policy you just created.
+
+Create User
+
+24. Go to _Users_ -> _Add User_.
+25. Give user a name and select _Programmatic Access_, click _Next_.
+26. Add a user to the group created above.
+27. Click _Create User_.
+28. Download and save .csv file with user credentials.
+29. Add following Config Vars to your Heroku app and use data from the file downloaded in previous step:
+  * AWS_ACCESS_KEY_ID = <access_key_id>
+  * AWS_SECRET_ACCESS_KEY = <secret_access_key>
+
+##### Last Steps
+30. Add following Config Var to your Heroku app:
+  * USE_AWS = True
+31. Remove DISABLE_COLLECTSTATIC Config Var from your Heroku app.
+32. In _settings.py_ update AWS_STORAGE_BUCKET_NAME parameter with your bucket name.
+33. Go to your AWS Bucket dashboard and create media/ folder.
+34. Upload all of your images to that folder. Choose _Grant public read access_ under _Permissions_.
+
+#### Stripe & Email
+
+##### Stripe
+1. Go to your Stripe account -> _ Developers_ -> _API Keys_.
+2. In Heroku create following Config Vars and use API key information from Stripe:
+  * STRIPE_PUBLIC_KEY = <public_key_from_stripe>
+  * STRIPE_PRIVATE_KEY = <private_key_from_stripe>
+4. Create new Webhook in Stripe using _<heroku_app_url>/checkout/wh/_ as an _Endpoint URL_. Select _Payment Intent_ events.
+5. Add STRIPE_WH_SECRET Config Var in Heroku with webhook signing secret.
+
+##### Email
+This project supports gmail account configuration.
+After you have all the settings set in your Gmail you need to add two Config Vars to Heroku:
+  * EMAIL_HOST_USER: <your_email_address>
+  * EMAIL_HOST_PASS: <password_generated_by_gmail>
