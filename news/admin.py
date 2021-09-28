@@ -8,8 +8,7 @@ class NewsAdmin(admin.ModelAdmin):
         'title',
         'date_added',
         'description',
-        'image',
-        'image_url'
+        'image'
     )
 
     ordering = ('-date_added',)
