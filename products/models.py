@@ -33,8 +33,8 @@ class Product(models.Model):
     name = models.CharField(max_length=254)
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    skill_category = models.ManyToManyField(SkillCategory, blank=True)
-    env_category = models.ManyToManyField(EnvCategory, blank=True)
+    skill_category = models.ManyToManyField(SkillCategory)
+    env_category = models.ManyToManyField(EnvCategory)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
