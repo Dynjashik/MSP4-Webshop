@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
@@ -34,18 +33,23 @@ def profile(request):
     return render(request, template, context)
 
 
+@login_required
 def order_history(request, order_number):
-    order = get_object_or_404(Order, order_number=order_number)
+    profile = get_object_or_404(UserProfile, user=request.user)
+    orders_found = profile.orders.filter(order_number=order_number)
+    if orders_found:
+        order = orders_found[0]
+        messages.info(request, (
+            f'This is a past confirmation for order number {order_number}.'
+            'A confirmation email was sent on the order date.'
+        ))
 
-    messages.info(request, (
-        f'This is a past confirmation for order number {order_number}. '
-        'A confirmation email was sent on the order date.'
-    ))
-
-    template = 'checkout/checkout_success.html'
-    context = {
-        'order': order,
-        'from_profile': True,
-    }
-
+        template = 'checkout/checkout_success.html'
+        context = {
+            'order': order,
+            'from_profile': True,
+        }
+    else:
+        messages.warning(request, (f'Order {order_number} was not found in your account.'))
+        return redirect(reverse('home'))
     return render(request, template, context)
