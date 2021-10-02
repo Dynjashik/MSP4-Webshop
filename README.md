@@ -62,16 +62,16 @@ Website admins (or superusers) has access to extended rights & functionality: ma
 - **Get responsive feedback from the web store on my actions** so that I am **aware of correctness of my actions**.
 
 #### User account
-- **Register and account** so that I can **have my personal account**
+- **Register an account** so that I can **have my personal account**
 - **Login and logout** so that I can **easily access my personal information**
 - **Recover my password** so that I can **get access to my personal account in case pasword was forgotten**
-- **Recieve an email after registration** so that I can **be sure that my account was registered successfully**
+- **Receive an email after registration** so that I can **be sure that my account was registered successfully**
 - **Have my personal profile page** so that I can **manage my payment/billing information and view order history**
 
 #### Shopping bag
 - **Be able add products to shopping bag** so that I can **make a purchase when I am ready**
 - **See an overview of all added products** so that I can **make sure that I did everything correct**
-- **Modify quantity and remvoe products in my shopping bag** so that I can **make corrections to my order before making a payment**
+- **Modify quantity and remove products in my shopping bag** so that I can **make corrections to my order before making a payment**
 - **Add delivery information** so that I can **recieve products to the specified address after making a payment**
 
 #### Payment and checkout
@@ -140,6 +140,68 @@ Authentication functionality that makes it possible to login/register for users.
 4. Add new News Articles to the site.
 5. Modify or delete existing News Articles on the site.
 6. View contact forms submitted by users.
+
+
+<span  id="Testing"></span>
+## Testing
+
+For testing this project I used several different approaches:
+ - Automatic testing using Django test framework
+ - Manual Testing
+ - Testing using external tools
+
+### Automatic testing
+
+For each app in the project there are test_views.py and test_forms.py files. In order to run for each app use:
+```
+python3 manage.py test <app_name>
+```
+
+Or run it without <app_name> if you want to run tests for the whole project
+
+#### test_views.py
+
+Here we test our request -> response logic and it is done for three different roles : Anonynous user, Authenticated user and Superuser (admin).
+For example we shouldn't be able to access order history of other user by typing in existing order id in url.
+
+#### test_forms.py
+
+In apps where we have forms we test required and non-required form fields mainly.
+
+
+### Manual testing
+
+With manual testing we use existing <a  href="#userstories">User Stories</a> and <a  href="#features">Features</a> to ensure that all required functionality works correctly and requirements are met.
+
+#### User Stories
+
+| Story                                                                                    	| Action                                                                                                                                                                                                                                 	| Result 	|
+|------------------------------------------------------------------------------------------	|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|--------	|
+| Easily understand the purpose of the website                                             	| Website name mentions babies, website logo has a baby face, homepage has clear message what webshop offers, background with toys supports this message.                                                                                	| PASSED 	|
+| Have simple and self-explanatory navigation tools                                        	| User-friendly navigation bar that is similar to a lot of web pages. It exists on all the pages and stays on top when navigating the shop. Colors clearly very visible.                                                                 	| PASSED 	|
+| View multiple amount of products at once                                                 	| All menu entries that lead to showing products open a page with a grid with multiple product items.                                                                                                                                    	| PASSED 	|
+| View each product separately                                                             	| Clicked on random product image. A separate page opened for that product. Copied the URL, tried to use that URL on different device. Page with same product opened.                                                                    	| PASSED 	|
+| Be able to sort products by price                                                        	| On "All Products" page clicked on "Sort by..." -> "Price (low to high)" and "Price (high to low)". Verified that products got sorted correctly.                                                                                        	| PASSED 	|
+| Be able to filter products by type of environment where they are reccommended to be used 	| Menu items in main navigation bar "Skills" and "Environment" open dropdowns with all available categories. Opened a random category of each category set. Verified that only products of one category was opened.                      	| PASSED 	|
+| Get responsive feedback from the web store on my actions                                 	| There are notification messages appear when I login/logout, update my shopping bag, enter faulty information etc.                                                                                                                      	| PASSED 	|
+| Register an account                                                                      	| Clicked on "Register" icon and on top right corner. Filled in the form, clicked "Sign Up" and got a message that verification email was sent to my email.                                                                              	| PASSED 	|
+| Login and logout                                                                         	| Clicked "Login" icon on top right corner. Logged in with my credentials. Clicked on "My Account" -> "Logout". Sighed out successfully.                                                                                                 	| PASSED 	|
+| Recover my password                                                                      	| Clicked "Forgot Password" on login page. Followed instructions provided afterwards. Successfully changed my password and logged in with new credentials.                                                                               	| PASSED 	|
+| Receive an email after registration                                                      	| Received an email with a verification link. Clicked "Confirm" on the page provided with a link.                                                                                                                                        	| PASSED 	|
+| Have my personal profile page                                                            	| After logging in clicked in "My Account" -> "My Profile". Got My Profile page.                                                                                                                                                         	| PASSED 	|
+| Be able add products to shopping bag                                                     	| Searched for a product. Opened single product page. Clicked "Add to bag". Received a message on top right corner that product was added to the bag. The product was added to the bag.                                                  	| PASSED 	|
+| See an overview of all added products                                                    	| Clicked on bag icon on top right corner. Shopping bag page opened with an overview of all products added to the bag.                                                                                                                   	| PASSED 	|
+| Modify quantity and remove products in my shopping bag                                   	| In a shopping bag with a product changed quantity and clicked "update". Information changed. Clicked "delete", product got removed from the shopping bag.                                                                              	| PASSED 	|
+| Add delivery information                                                                 	| After clicking "Secure checkout" in shopping bag got redirected to checkout page with a form where delivery information needs to be filled in.                                                                                         	| PASSED 	|
+| Make a payment for products that are in my shopping bag                                  	| After filling in delivery information form and payment details on checkout page clicked "Complete Order". Got a confirmation page with order details and a notification on top right corner notifying that confirmation email is sent. 	| PASSED 	|
+| Receive a confirmation email with all of the order details                               	| Received an email with order details after completing the payment.                                                                                                                                                                     	| PASSED 	|
+| Contact the store owners                                                                 	| Opened Contact form by clicking "Contact" menu item in main navigation menu. Filed in the form and clicked send. Got a notification on top right corner that my message got sent.                                                      	| PASSED 	|
+| Be able to read latest updates from store admins                                         	|                                                                                                                                                                                                                                        	|        	|
+| Add/modify/delete products                                                               	|                                                                                                                                                                                                                                        	|        	|
+| Add/modify/delete news articles                                                          	|                                                                                                                                                                                                                                        	|        	|
+| Read messages submitted by contact form                                                  	|                                                                                                                                                                                                                                        	|        	|
+|                                                                                          	|                                                                                                                                                                                                                                        	|        	|
+|                                                                                          	|                                                                                                                                                                                                                                        	|        	|
 
 <span  id="deployment"></span>
 ## Deployment
