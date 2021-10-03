@@ -19,9 +19,32 @@ body {
   width: 1.5rem;
 }
 
-.logo-font {
+.title-font {
   text-transform: uppercase;
   background-color: rgba(255, 255, 255, 0.5);
+}
+
+@media screen and (max-width: 768px) {
+  .title-font {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .title-font {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .title-font {
+    font-size: 3rem;
+  }
+}
+
+.logo-font {
+  text-transform: uppercase;
+  color: #046c09;
 }
 
 .main-logo-link {
@@ -35,13 +58,13 @@ body {
 }
 
 .shop-now-button {
-  background: black;
+  background: #046c09;
   color: white;
   min-width: 260px;
 }
 
 .btn-black {
-  background: black;
+  background: #046c09 ;
   color: white;
 }
 
@@ -51,7 +74,7 @@ body {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-  background: #222;
+  background: #046c09 ;
   color: white;
 }
 
@@ -85,6 +108,17 @@ body {
   .header-container {
       padding-top: 164px;
   }
+}
+
+@media (max-width: 350px) {
+  .mobile-homepage{
+    margin-top: 120px;
+  }
+}
+
+.mobile-top-menu{
+  margin:0;
+  padding: 0;
 }
 
 .bottom-glow {
@@ -145,14 +179,14 @@ input[name='q']::placeholder {
 
 .btn-outline-black {
   background: white;
-  color: black !important; /* use important to override link colors for <a> elements */
+  color: black!important; /* use important to override link colors for <a> elements */
   border: 1px solid black;
 }
 
 .btn-outline-black:hover,
 .btn-outline-black:active,
 .btn-outline-black:focus {
-  background: black;
+  background: #046c09 ;
   color: white !important;
 }
 
@@ -179,7 +213,7 @@ input[name='q']::placeholder {
   height: 0; 
   border-left: 4px solid transparent;
   border-right: 4px solid transparent; 
-  border-bottom: 10px solid black;
+  border-bottom: 10px solid #046c09 ;
   position: absolute;
   top: -10px;
   right: 36px;
