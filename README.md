@@ -1,50 +1,41 @@
+# MS4 Baby-Hero
+Baby Hero is an e-commerce web store offering a wide range of toys & accessories for babies under 1 year old. It is a full-stack application that is designed to help customers understand the usage of the products and its functional purpose. It is possible for unregistered users to get to know all the products in stock and purchase them with ease. Additionally, customers can register their profiles, save their personal information for faster checkout process and view order history. There is a news feed that broadcasts latest store updates for all the visitors of the site. Also users have a possibility to contact webshop administration with a help of a special contact form provided on the site.
 
+![mockup]()
+
+Live Website: [here.]()
 
 ## Table of Contents
 
-1.  <a  href="#overview">**Overview**</a>
+1.  <a  href="#ux">**User Experience (UX)**</a>
+    * <a  href="#userstories">**User Stories**</a>
+    * <a  href="#strategy">**Strategy and Scope**</a>
+    * <a  href="#structure">**Structure**</a>
+    * <a  href="#skeleton">**Skeleton**</a>
+    * <a  href="#surface">**Surface**</a>
 
-1.  <a  href="#purpose">**Purpose & Motivation**</a>
+2.  <a  href="#features">**Features**</a>
 
-2.  <a  href="#ux">**User Experience (UX)**</a>
+3.  <a href="#database">**Database**</a>
 
-3.  <a  href="#design">**Design & Development**</a>
+4.  <a  href="#technologies">**Technologies**</a>
 
-4.  <a  href="#userstories">**User Stories**</a>
+5.  <a  href="#testing">**Testing**</a>
+    * <a  href="#knownbugs">**Known Bugs**</a>
 
-5.  <a  href="#wireframes">**Wireframes**</a>
-
-6.  <a  href="#technologies">**Technologies**</a>
-
-7.  <a  href="#features">**Features**</a>
-
-8.  <a  href="#testing">**Testing**</a>
-
-9.  <a  href="#deployment">**Deployment**</a>
+6.  <a  href="#deployment">**Deployment**</a>
     * <a  href="#deploy-heroku-aws">**Heroku & AWS**</a>
         * <a  href="#deploy-heroku">**Heroku**</a>
         * <a  href="#deploy-aws">**AWS**</a>
         * <a  href="#deploy-stripe-email">**Stripe & Email**</a>
-    * <a  href="#deploy-gitpod">**Gitpod**</a>
-    
+    * <a  href="#deploy-gitpod">**Gitpod**</a>   
 
-10. <a  href="#database">**Database**</a>
+7. <a  href="#credits">**Credits**</a>
 
-11. <a  href="#credits">**Credits**</a>
 
-12. <a  href="#acknowledgements">**Acknowledgements**</a>
+<span  id="ux"></span>
 
-<span  id="overview"></span>
-## Overview
-Baby Hero is an e-commerce web store offering a wide range of toys & accessories for babies under 1 year old. It is a full-stack application that is designed to help customers understand the usage of the products and its functional purpose. It is possible for unregistered users to get to know all the products in stock and purchase them with ease. Additionally, customers can register their profiles, save their personal information for faster checkout process and view order history. There is a news feed that broadcasts  latest store updates for all the visitors of the site. Also users have a possibility to contact webshop administration with a help of a special contact form provided on the site.
-
-<span  id="purpose"></span>
-## Purpose and Motivation
-There is a huge amount of toy shop out there, both online and physical ones. Most of them have a very broad spectrum of products for all kind of usages and ages. It can get very confusing when you look for something specific, especially if you just became a parent or want to buy something as a present. That's why I saw a need to start a store specifically with products for babies under 1 year old, because it is not 100% clear what toys & accessories are fit for such fragile children. In addition I came up with an unusual categories for such shop, that would filter products by baby's skills and environment where products can be used.
-
-The website has clear and simple design that allows users to quickly navigate and search the products. While adding products to a shopping bag the total cost will update dynamically and the user can easily track his upcoming expenses. Afterwards the user can procced to the check-out page where he can make a payment and complete an order. The order confirmation & details will be sent to the user's email.
-
-Website admins (or superusers) has access to extended rights & functionality: manage products, news blog and contact requests. 
+# User Experience (UX)
 
 <span  id="userstories"></span>
 
@@ -89,8 +80,58 @@ Website admins (or superusers) has access to extended rights & functionality: ma
 - **Add/modify/delete news articles** so I can **update customers with any important information**
 - **Read messages submitted by contact form** so that I can **act on cutomer's feedback appropriately**.
 
+<span  id="strategy"></span>
+### Strategy and Scope
+
+There is a huge amount of toy shop out there, both online and physical ones. Most of them have a very broad spectrum of products for all kind of usages and ages. It can get very confusing when you look for something specific, especially if you just became a parent or want to buy something as a present. That's why I saw a need to start a store specifically with products for babies under 1 year old, because it is not 100% clear what toys & accessories are fit for such fragile children. In addition I came up with an unusual categories for such shop, that would filter products by baby's skills and environment where products can be used.
+
+The website has clear and simple design that allows users to quickly navigate and search the products. While adding products to a shopping bag the total cost will update dynamically and the user can easily track his upcoming expenses. Afterwards the user can procced to the check-out page where he can make a payment and complete an order. The order confirmation & details will be sent to the user's email.
+
+Website admins (or superusers) has access to extended rights & functionality: manage products, news blog and contact requests. 
+
+<span  id="structure"></span>
+### Structure
+
+The website will be made up of multiple pages based on 8 data models, product, 2 kinds of categories, bag, checkout, user profile, contact form and news.
+The landing page will consist of a large hero image with a text introduction of the site and suggestion to start shopping. 
+Login, registration, add/edit products/profile/contact/news and contact pages will all consist of forms with varying inputs dependant on the purpose of the form. 
+The profile page will display user information from the form and latest orders. 
+The products page will display all products and can be sorted or filtered by price, by category. 
+The category of products page will display all products by the catgory and can be sorted or filtered by price, by category. 
+The product detail page will display the image and details with an option to purchase, edit/delete for the admin user. 
+The news page will display all latest news about the webshop with an option to add, edit/delete for the admin user. 
+The contact page will display form for contacting the webshop administration.
+The bag page will display items in the bag, subtotals, delivery cost, grand total and an option to update quantities in the bag. 
+The checkout page will display and order summary, a user information form and stripe inputs. 
+The successful checkout page will display an order summary and a message stating the summary has been emailed to the address provided. 
+
+<span  id="skeleton"></span>
+### Skeleton
+
+Mockup of the website was created in ["Balsamiq Wireframes"]().
+
+<span  id="surface"></span>
+### Surface
+
+The primary design goal is to attract the user to explore the application. The landing page is bright and striking with a call-to-action button leading users to the shop. Bright design represents atmoshpere of the shop with colorful pictures of children products.
+It's a visually appealing application, designed an intuitive and easy to navigate website. 
+The website is responsive on all screen sizes, using Bootstrap4 features. 
+
+The design of logo is created by myself that is simple, fun and memorable.
+![img]()
+The colour scheme chosen for this project was inspired by warm bright colours of children products to give the website an attractive, fresh look. To balance and harmonize bright colors the white background is chosen. It gives a neutral look to the website with green and black nicely complementing.
+![img]()
+
+#FFFFFF White is the background of all pages on the website. The bright colour and the black text is easily readable on the white background.
+
+#046c09 Green is used for for headings and some buttons seen throughout the website and dilutes the black and white palette.
+
+#000000 Black is used for text and icons on the website. The black text is easily read on the white background. Black is also used throughout the application for buttons.
+
+The font-family "Lato" is used because of classical proportions to give the letterforms familiar harmony and elegance. The semi-rounded details of the letters give Lato a feeling of warmth with the feeling of the Summer.
 
 <span  id="features"></span>
+
 ## Features
 
 ### Existing features
@@ -141,8 +182,51 @@ Authentication functionality that makes it possible to login/register for users.
 5. Modify or delete existing News Articles on the site.
 6. View contact forms submitted by users.
 
+<span  id="technologies"></span>
+## Technologies
 
-<span  id="Testing"></span>
+### Database 
+
+
+### Languages used:
+
+HTML5 - for basic content and structure of the website. 
+CSS3 - for style the website. 
+Javascript - for interactivity throughout website. 
+Python - for handle backend functionality. 
+
+### Frameworks and libraries used:
+[Django]() - Python Web framework that encourages rapid development and clean, pragmatic design. 
+[Bootstrap4]() - front-end framework for faster and easier web development including forms, buttons and navigations. 
+[Stripe offers]()- payment processing software and application programming interfaces for e-commerce websites and mobile applications.
+[Django Allauth]() - an integrated set of Django applications addressing authentication, registration and account management. 
+[JQuery](https://jquery.com/) - for making the site interactive.   
+[Font Awesome](https://fontawesome.com/) - for using icons.  
+[Google Fonts](https://fonts.google.com/) -  for font of the website.  
+[Balsamiq](https://balsamiq.com/) - for creating the wireframe. 
+
+
+### Tools and Other Resources used:
+
+[Github](https://github.com/) - for version control and store the code for the project.   
+[Gitpod](https://www.gitpod.io/) - for writing the code for the website and push it to Github.    
+[Heroku](https://id.heroku.com/login) – for deployment the project.  
+[Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/) - for verifying the hashed password and username.    
+[Mockup generator](http://techsini.com/multi-mockup/index.php) - for testing responsive website on various devices.  
+[W3 Schools](https://www.w3schools.com/) - for HTML, CSS, JS, Python tips.  
+[Stackoverflow](stackoverflow.com) - for finding answers on questions.  
+[Webformatter](https://webformatter.com) - for beautifying HTML, CSS, Javascript codes. 
+[Datetime](https://docs.python.org/3/library/datetime.html#module-datetime) - for manipulating dates and times. 
+[Regular expression](https://docs.python.org/3/library/re.html)- matching operations similar to those found in Perl. 
+
+### Codes used:
+
+Some of the code was taken from the sources:
+* [Stackoverflow](https://stackoverflow.com/) - 
+* [CodeInstitute course](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+DCP101+2017_T3/courseware/9e2f12f5584e48acb3c29e9b0d7cc4fe/6449dcd23ca14016aa83dc7313d91a02/?child=first) – 
+
+<span  id="testing"></span>
+
 ## Testing
 
 For testing this project I used several different approaches:
@@ -202,6 +286,8 @@ With manual testing we use existing <a  href="#userstories">User Stories</a> and
 | Read messages submitted by contact form                                                  	|                                                                                                                                                                                                                                        	|        	|
 |                                                                                          	|                                                                                                                                                                                                                                        	|        	|
 |                                                                                          	|                                                                                                                                                                                                                                        	|        	|
+<span  id="knownbugs"></span>
+### Known Bugs
 
 <span  id="deployment"></span>
 ## Deployment
@@ -458,3 +544,23 @@ python3 manage.py createsuperuser
 ```
 python3 manage.py runserver
 ```
+
+<span  id="credits"></span>
+## Credits
+
+### Contents
+
+All content is written by developer Darya Belarusik.
+
+### Media
+
+Image for background, product images were taken from:
+
+
+Logo of the website in navigation menu is created by Darya. 
+
+### Acknowledgements
+
+Inspiration for this project was received from:
+* Other code institute students' projects.
+* Help of the mentor, slack and my husband.
