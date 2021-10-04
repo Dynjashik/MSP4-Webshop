@@ -5,6 +5,7 @@ from .models import News
 
 class NewsAdmin(admin.ModelAdmin):
     list_display = (
+        'id',
         'title',
         'date_added',
         'description',
