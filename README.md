@@ -185,20 +185,28 @@ Authentication functionality that makes it possible to login/register for users.
 <span  id="technologies"></span>
 ## Technologies
 
+<span  id="Database"></span>
 ### Database 
 
+Database design is shown on the picture below:
+
+![Database Design](database_readme.png)
+
+- Models with orange background are coming from Django and its libraries
+- I decided to have two separate models for two different types of categories.
+- Also each product can have several categories of each type. That makes it more flexible and more engaging for customers to explore different products. Also it is more correct that some products for example can be used both indoor and outdoor (multiple environment categories) and can be used both for teething and touching (multiple skill categories).
 
 ### Languages used:
 
-HTML5 - for basic content and structure of the website. 
-CSS3 - for style the website. 
-Javascript - for interactivity throughout website. 
-Python - for handle backend functionality. 
+- HTML5 - for basic content and structure of the website. 
+- CSS3 - for style the website. 
+- Javascript - for interactivity throughout website. 
+- Python - for handle backend functionality. 
 
 ### Frameworks and libraries used:
 [Django]() - Python Web framework that encourages rapid development and clean, pragmatic design. 
 [Bootstrap4]() - front-end framework for faster and easier web development including forms, buttons and navigations. 
-[Stripe offers]()- payment processing software and application programming interfaces for e-commerce websites and mobile applications.
+[Stripe]()- payment processing software and application programming interfaces for e-commerce websites and mobile applications.
 [Django Allauth]() - an integrated set of Django applications addressing authentication, registration and account management. 
 [JQuery](https://jquery.com/) - for making the site interactive.   
 [Font Awesome](https://fontawesome.com/) - for using icons.  
@@ -217,7 +225,7 @@ Python - for handle backend functionality.
 [Stackoverflow](stackoverflow.com) - for finding answers on questions.  
 [Webformatter](https://webformatter.com) - for beautifying HTML, CSS, Javascript codes. 
 [Datetime](https://docs.python.org/3/library/datetime.html#module-datetime) - for manipulating dates and times. 
-[Regular expression](https://docs.python.org/3/library/re.html)- matching operations similar to those found in Perl. 
+
 
 ### Codes used:
 
