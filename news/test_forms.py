@@ -12,7 +12,8 @@ class TestNewsForm(TestCase):
         self.assertIn('title', form.errors.keys())
         self.assertIn('description', form.errors.keys())
         self.assertEqual(form.errors['title'][0], 'This field is required.')
-        self.assertEqual(form.errors['description'][0], 'This field is required.')
+        self.assertEqual(form.errors['description'][0],
+                         'This field is required.')
 
     def test_form_non_required_fields(self):
         form = NewsForm({'title': 'Test title',

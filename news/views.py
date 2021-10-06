@@ -1,10 +1,8 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.db.models import Q
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .models import News
 from .forms import NewsForm
-from datetime import datetime
 
 
 def all_news(request):
@@ -30,7 +28,9 @@ def add_news_item(request):
             messages.success(request, 'Successfully added news article!')
             return redirect(reverse('news'))
         else:
-            messages.error(request, 'Failed to news article. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to news article. Please ensure the form is valid.')
     else:
         form = NewsForm()
 
@@ -55,10 +55,15 @@ def edit_news_item(request, news_id):
         form = NewsForm(request.POST, request.FILES, instance=news_item)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Successfully updated "' + news_item.title + '" article!')
+            messages.success(
+                request,
+                'Successfully updated "' + news_item.title + '" article!')
             return redirect(reverse('news'))
         else:
-            messages.error(request, 'Failed to update "' + news_item.title + '" news article. Please ensure the form is valid.')
+            messages.error(request,
+                           f"""Failed to update "{news_item.title}"
+                           news article. Please ensure the form is
+                           valid.'""")
     else:
         form = NewsForm(instance=news_item)
         messages.info(request, f'You are editing "{news_item.title}" article')

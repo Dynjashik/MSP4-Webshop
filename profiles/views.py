@@ -4,7 +4,6 @@ from django.contrib.auth.decorators import login_required
 
 from .models import UserProfile
 from .forms import UserProfileForm
-from checkout.models import Order
 
 
 @login_required
@@ -18,7 +17,9 @@ def profile(request):
             form.save()
             messages.success(request, 'Profile updated successfully')
         else:
-            messages.error(request, 'Update failed. Please ensure the form is valid.')
+            messages.error(request,
+                           """Update failed. Please ensure the form
+                              is valid.""")
     else:
         form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
@@ -50,6 +51,8 @@ def order_history(request, order_number):
             'from_profile': True,
         }
     else:
-        messages.warning(request, (f'Order {order_number} was not found in your account.'))
+        messages.warning(request,
+                         (f"""Order {order_number} was not found in
+                           your account."""))
         return redirect(reverse('home'))
     return render(request, template, context)

@@ -1,7 +1,5 @@
 from django.contrib import messages
-from django.db.models import Q
-from django.shortcuts import render, redirect, reverse
-from .models import Contact
+from django.shortcuts import render
 from .forms import ContactForm
 
 
@@ -12,9 +10,13 @@ def add_contact_item(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Message sent successfully. Thank you for contacting us')
+            messages.success(
+                request,
+                'Message sent successfully. Thank you for contacting us')
         else:
-            messages.error(request, 'Message failed to send. Please check if the form is valid.')
+            messages.error(
+                request,
+                'Message failed to send. Please check if the form is valid.')
 
     form = ContactForm()
 

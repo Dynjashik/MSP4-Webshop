@@ -9,18 +9,20 @@ class ProductForm(forms.ModelForm):
         model = Product
         fields = '__all__'
 
-    image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
+    image = forms.ImageField(label='Image',
+                             required=False,
+                             widget=CustomClearableFileInput)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         skill_categories = SkillCategory.objects.all()
-        skill_friendly_names = [(c.id, c.get_friendly_name()) for c in skill_categories]
+        skillnames = [(c.id, c.get_friendly_name()) for c in skill_categories]
 
         env_categories = EnvCategory.objects.all()
-        env_friendly_names = [(c.id, c.get_friendly_name()) for c in env_categories]
+        envnames = [(c.id, c.get_friendly_name()) for c in env_categories]
 
-        self.fields['skill_category'].choices = skill_friendly_names
-        self.fields['env_category'].choices = env_friendly_names
+        self.fields['skill_category'].choices = skillnames
+        self.fields['env_category'].choices = envnames
 
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black rounded-0'

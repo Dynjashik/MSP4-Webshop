@@ -6,6 +6,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .models import Product, SkillCategory, EnvCategory
 from .forms import ProductForm
 
+
 def all_products(request):
     """A view to show all products, including sorting and search queries"""
 
@@ -37,14 +38,14 @@ def all_products(request):
             products = products.order_by(sortkey)
 
         if 'skill-category' in request.GET:
-            skill_categories = request.GET['skill-category'].split(',')
-            products = products.filter(skill_category__name__in=skill_categories)
-            skill_categories = SkillCategory.objects.filter(name__in=skill_categories)
+            skill_cats = request.GET['skill-category'].split(',')
+            products = products.filter(skill_category__name__in=skill_cats)
+            skill_cats = SkillCategory.objects.filter(name__in=skill_cats)
 
         if 'env-category' in request.GET:
-            env_categories = request.GET['env-category'].split(',')
-            products = products.filter(env_category__name__in=env_categories)
-            env_categories = EnvCategory.objects.filter(name__in=env_categories)
+            env_cats = request.GET['env-category'].split(',')
+            products = products.filter(env_category__name__in=env_cats)
+            env_cats = EnvCategory.objects.filter(name__in=env_cats)
 
         if 'searchq' in request.GET:
             query = request.GET['searchq']
@@ -52,8 +53,8 @@ def all_products(request):
                 messages.error(request, "No search criteria was given.")
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
-            products = products.filter(queries)
+            q = Q(name__icontains=query) | Q(description__icontains=query)
+            products = products.filter(q)
 
     current_sorting = f'{sort}-{direction}'
 
@@ -75,7 +76,7 @@ def product_detail(request, product_id):
 
     context = {'product': product,
                'skill_categories': skill_cats,
-               'env_categories': env_cats }
+               'env_categories': env_cats}
 
     return render(request, 'products/product_detail.html', context)
 
@@ -95,7 +96,9 @@ def add_product(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(request,
+                           """Failed to add product. Please ensure the form
+                              is valid.""")
     else:
         form = ProductForm()
 
@@ -123,7 +126,9 @@ def edit_product(request, product_id):
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+            messages.error(request,
+                           """Failed to update product. Please ensure the form
+                              is valid.""")
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')

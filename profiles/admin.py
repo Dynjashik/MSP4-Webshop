@@ -3,6 +3,7 @@ from .models import UserProfile
 
 # Register your models here.
 
+
 class UserProfileAdmin(admin.ModelAdmin):
     list_display = (
         'user',
@@ -17,5 +18,6 @@ class UserProfileAdmin(admin.ModelAdmin):
         'default_postcode',
         'default_country'
     )
+
 
 admin.site.register(UserProfile, UserProfileAdmin)

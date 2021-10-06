@@ -3,6 +3,7 @@ from .models import News
 
 # Register your models here.
 
+
 class NewsAdmin(admin.ModelAdmin):
     list_display = (
         'id',
@@ -13,5 +14,6 @@ class NewsAdmin(admin.ModelAdmin):
     )
 
     ordering = ('-date_added',)
+
 
 admin.site.register(News, NewsAdmin)

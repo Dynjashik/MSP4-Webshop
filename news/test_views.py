@@ -29,7 +29,8 @@ class TestAnonymousViews(TestCase):
 
     def test_can_delete_news_anon(self):
         test_news = News.objects.all()[0]
-        response = self.client.get(f'/news/delete/{test_news.id}/', follow=True)
+        response = self.client.get(f'/news/delete/{test_news.id}/',
+                                   follow=True)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "account/login.html")
 
@@ -65,9 +66,11 @@ class TestUserViews(TestCase):
 
     def test_can_delete_news_user(self):
         test_news = News.objects.all()[0]
-        response = self.client.get(f'/news/delete/{test_news.id}/', follow=True)
+        response = self.client.get(f'/news/delete/{test_news.id}/',
+                                   follow=True)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "home/index.html")
+
 
 class TestAdminViews(TestCase):
 
@@ -100,6 +103,7 @@ class TestAdminViews(TestCase):
 
     def test_can_delete_news_user(self):
         test_news = News.objects.all()[0]
-        response = self.client.get(f'/news/delete/{test_news.id}/', follow=True)
+        response = self.client.get(f'/news/delete/{test_news.id}/',
+                                   follow=True)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "news/news.html")

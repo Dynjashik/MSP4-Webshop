@@ -2,6 +2,7 @@ from django.test import TestCase
 from .forms import ProductForm
 from .models import SkillCategory, EnvCategory
 
+
 class TestProductForm(TestCase):
 
     def setUp(self):
@@ -30,10 +31,14 @@ class TestProductForm(TestCase):
         self.assertIn('skill_category', form.errors.keys())
         self.assertIn('env_category', form.errors.keys())
         self.assertEqual(form.errors['name'][0], 'This field is required.')
-        self.assertEqual(form.errors['description'][0], 'This field is required.')
-        self.assertEqual(form.errors['price'][0], 'This field is required.')
-        self.assertEqual(form.errors['skill_category'][0], 'This field is required.')
-        self.assertEqual(form.errors['env_category'][0], 'This field is required.')
+        self.assertEqual(
+            form.errors['description'][0], 'This field is required.')
+        self.assertEqual(
+            form.errors['price'][0], 'This field is required.')
+        self.assertEqual(
+            form.errors['skill_category'][0], 'This field is required.')
+        self.assertEqual(
+            form.errors['env_category'][0], 'This field is required.')
 
     def test_form_non_required_fields(self):
 
@@ -58,5 +63,7 @@ class TestProductForm(TestCase):
         self.assertFalse(form.is_valid())
         self.assertIn('skill_category', form.errors.keys())
         self.assertIn('env_category', form.errors.keys())
-        self.assertEqual(form.errors['skill_category'][0], 'Enter a list of values.')
-        self.assertEqual(form.errors['env_category'][0], 'Enter a list of values.')
+        self.assertEqual(
+            form.errors['skill_category'][0], 'Enter a list of values.')
+        self.assertEqual(
+            form.errors['env_category'][0], 'Enter a list of values.')

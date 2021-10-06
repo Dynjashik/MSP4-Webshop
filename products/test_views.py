@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.test import TestCase
-from .models import SkillCategory, EnvCategory, Product
+from .models import Product
+
 
 class TestAnonymousViews(TestCase):
 
@@ -18,7 +19,8 @@ class TestAnonymousViews(TestCase):
 
     def test_get_product_details_anon(self):
         test_product = Product.objects.all()[0]
-        response = self.client.get(f'/products/{test_product.id}/', follow=True)
+        response = self.client.get(f'/products/{test_product.id}/',
+                                   follow=True)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "products/product_detail.html")
 
@@ -29,15 +31,18 @@ class TestAnonymousViews(TestCase):
 
     def test_get_edit_product_anon(self):
         test_product = Product.objects.all()[0]
-        response = self.client.get(f'/products/edit/{test_product.id}/', follow=True)
+        response = self.client.get(f'/products/edit/{test_product.id}/',
+                                   follow=True)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "account/login.html")
 
     def test_can_delete_product_anon(self):
         test_product = Product.objects.all()[0]
-        response = self.client.get(f'/products/delete/{test_product.id}/', follow=True)
+        response = self.client.get(f'/products/delete/{test_product.id}/',
+                                   follow=True)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "account/login.html")
+
 
 class TestUserViews(TestCase):
 
@@ -60,7 +65,8 @@ class TestUserViews(TestCase):
 
     def test_get_product_details_user(self):
         test_product = Product.objects.all()[0]
-        response = self.client.get(f'/products/{test_product.id}/', follow=True)
+        response = self.client.get(f'/products/{test_product.id}/',
+                                   follow=True)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "products/product_detail.html")
 
@@ -71,15 +77,18 @@ class TestUserViews(TestCase):
 
     def test_get_edit_product_user(self):
         test_product = Product.objects.all()[0]
-        response = self.client.get(f'/products/edit/{test_product.id}/', follow=True)
+        response = self.client.get(f'/products/edit/{test_product.id}/',
+                                   follow=True)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "home/index.html")
 
     def test_can_delete_product_user(self):
         test_product = Product.objects.all()[0]
-        response = self.client.get(f'/products/delete/{test_product.id}/', follow=True)
+        response = self.client.get(f'/products/delete/{test_product.id}/',
+                                   follow=True)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "home/index.html")
+
 
 class TestAdminViews(TestCase):
 
@@ -102,7 +111,8 @@ class TestAdminViews(TestCase):
 
     def test_get_product_details_admin(self):
         test_product = Product.objects.all()[0]
-        response = self.client.get(f'/products/{test_product.id}/', follow=True)
+        response = self.client.get(f'/products/{test_product.id}/',
+                                   Follow=True)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "products/product_detail.html")
 
@@ -113,12 +123,14 @@ class TestAdminViews(TestCase):
 
     def test_get_edit_product_admin(self):
         test_product = Product.objects.all()[0]
-        response = self.client.get(f'/products/edit/{test_product.id}/', follow=True)
+        response = self.client.get(f'/products/edit/{test_product.id}/',
+                                   follow=True)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "products/edit_product.html")
 
     def test_can_delete_product_admin(self):
         test_product = Product.objects.all()[0]
-        response = self.client.get(f'/products/delete/{test_product.id}/', follow=True)
+        response = self.client.get(f'/products/delete/{test_product.id}/',
+                                   follow=True)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "products/products.html")

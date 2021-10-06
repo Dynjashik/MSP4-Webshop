@@ -3,6 +3,7 @@ from .models import Product, SkillCategory, EnvCategory
 
 # Register your models here.
 
+
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
         'name',
@@ -22,17 +23,20 @@ class ProductAdmin(admin.ModelAdmin):
     def env_categories(self, obj):
         return "\n".join([p["name"] for p in obj.env_category.values()])
 
+
 class SkillCategoryAdmin(admin.ModelAdmin):
     list_display = (
         'friendly_name',
         'name',
     )
 
+
 class EnvCategoryAdmin(admin.ModelAdmin):
     list_display = (
         'friendly_name',
         'name',
     )
+
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(SkillCategory, SkillCategoryAdmin)
