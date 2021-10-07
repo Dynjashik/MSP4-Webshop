@@ -86,5 +86,6 @@ class OrderLineItem(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f"""{self.quantity}x{self.product.name} on order
+        return f"""SKU {self.product.sku},
+                   {self.quantity}x{self.product.name} on order
                    {self.order.order_number}"""

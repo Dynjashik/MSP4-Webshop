@@ -6,6 +6,7 @@ from .models import Product, SkillCategory, EnvCategory
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
+        'sku',
         'name',
         'description',
         'price',
@@ -15,7 +16,7 @@ class ProductAdmin(admin.ModelAdmin):
         'image_url'
     )
 
-    ordering = ('name',)
+    ordering = ('sku',)
 
     def skill_categories(self, obj):
         return "\n".join([p["name"] for p in obj.skill_category.values()])

@@ -4,6 +4,7 @@
 		"model": "products.product",
 		"fields": {
 			"name": "Nuby Ice Gel Teether Keys",
+			"sku": "pp5002260206",
 			"description": "Multi-surface teething makes this teether perfect for assisting in the eruption of front, middle and back teeth. When place in the refrigerator Nuby's PurICE technology provides gentle cooling on baby's gums. Age: 3 months and above; BPA Free",
 			"price": 5.6,
 			"skill_category": [1],
@@ -17,6 +18,7 @@
 		"model": "products.product",
 		"fields": {
 			"name": "Fisher-Price Pizza Slice Teether",
+			"sku": "pp5002601115",
 			"description": "Pizza teether toy for babies 3 months and older. Soft, crinkly vegetable pizza fosters tactile and auditory skills. Helps baby develop dexterity and hand-eye coordination",
 			"price": 4.99,
 			"skill_category": [1],
@@ -30,6 +32,7 @@
 		"model": "products.product",
 		"fields": {
 			"name": "Fisher-Price Calming Vibes Hedgehog Soother",
+			"sku": "pp5002690715",
 			"description": "​Portable, snuggly hedgehog soother for babies from birth. ​5 Sensory Discoveries to engage your baby’s senses of hearing and touch. 10 minutes of gentle music and sounds, plus volume control, and calming vibrations.",
 			"price": 14.99,
 			"skill_category": [2],
@@ -43,6 +46,7 @@
 		"model": "products.product",
 		"fields": {
 			"name": "Skip Hop Explore & More Egg Shakers",
+			"sku": "pp5002701115",
 			"description": "Three pieces: Owl, Hedgehog and Fox. Each shaker makes its own unique sound. Easy-to-hold design for little hands",
 			"price":9.99,
 			"skill_category": [2],
@@ -56,6 +60,7 @@
 		"model": "products.product",
 		"fields": {
 			"name": "The First Years Spin and Smile Spinning Baby Rattle",
+			"sku": "pp5002761055",
 			"description": "The ideal size for babies to grab and hold, the rattle is great for promoting fine motor skill development. This baby rattle also features a textured ring for baby to explore which helps stimulate tactile development and sensory processing. The bright cheerful colors engage and stimulate baby's attention and visual perception while the spinning center creates fun rattle sounds.",
 			"price": 7.6,
 			"skill_category": [3],
@@ -69,6 +74,7 @@
 		"model": "products.product",
 		"fields": {
 			"name": "Oball Jingle & Shake Pal Easy-Grasp Rattle",
+			"sku": "pp5002820069",
 			"description": "Ribbit, rattle and roll, baby! The Oball Jingle & Shake Pal is sure to bring leaps and bounds of fun to your little one. This friendly frog is made for play, even down to his tiny toes – made of colorful beads for your baby to spin! The chiming ball nestled inside will fascinate your baby, and he’ll love to shake up the noise. ",
 			"price": 3.68,
 			"skill_category": [4],
@@ -82,6 +88,7 @@
 		"model": "products.product",
 		"fields": {
 			"name": "Infantino Textured Multi Ball 6 Piece Set",
+			"sku": "pp5002820147",
 			"description": "Easy-to-grab, bright and textured design for babies to develop tactile senses while having fun. Soft and textured material featuring 6 varied sizes and shapes which encourages baby to reach, bat, grab and enjoy sensory play.",
 			"price": 4.65,
 			"skill_category": [5],
@@ -95,6 +102,7 @@
 		"model": "products.product",
 		"fields": {
 			"name": "Brio Toddler Wobbler",
+			"sku": "pp5002910572",
 			"description": "The Toddler Wobbler has an adjustable handle and brake so it can adapt to your child's progress, and rubber non-skid wheels that help keep it under control without marring floor surfaces. It's made from solid beech wood and painted to a vibrant, glossy finish. Perfect for early walkers - Help your toddler develop their walking skills with a toddler wobbler to help them balance.",
 			"price": 52.44,
 			"skill_category": [1,5],
