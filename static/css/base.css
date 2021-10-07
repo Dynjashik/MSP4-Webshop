@@ -63,7 +63,7 @@ body {
   min-width: 260px;
 }
 
-.btn-black {
+.btn-green {
   background: #046c09 ;
   color: white;
 }
@@ -71,9 +71,9 @@ body {
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
+.btn-green:hover,
+.btn-green:active,
+.btn-green:focus {
   background: #046c09 ;
   color: white;
 }
@@ -173,13 +173,13 @@ box-shadow: 0px 4px 4px 0px #54b77e;
     font-size: .9rem;
 }
 
-  .btn.btn-outline-black.rounded-0,
-  .btn.btn-black.rounded-0 {
+  .btn.btn-outline-green.rounded-0,
+  .btn.btn-green.rounded-0 {
     padding: .375rem .375rem;
 }
 
-  .btn.btn-outline-black.rounded-0.btn-lg,
-  .btn.btn-black.rounded-0.btn-lg {
+  .btn.btn-outline-green.rounded-0.btn-lg,
+  .btn.btn-green.rounded-0.btn-lg {
     padding: .375rem .375rem;
     font-size: .75rem;
 }
@@ -213,15 +213,15 @@ input[name='q']::placeholder {
     cursor: pointer;
 }
 
-.btn-outline-black {
+.btn-outline-green {
   background: white;
-  color: black!important; /* use important to override link colors for <a> elements */
-  border: 1px solid black;
+  color: #046c09!important; /* use important to override link colors for <a> elements */
+  border: 1px solid #046c09;
 }
 
-.btn-outline-black:hover,
-.btn-outline-black:active,
-.btn-outline-black:focus {
+.btn-outline-green:hover,
+.btn-outline-green:active,
+.btn-outline-green:focus {
   background: #046c09 ;
   color: white !important;
 }
@@ -331,8 +331,8 @@ display: inline-block;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: #000;
-  border: 1px solid #000;
+  background-color: #046c09;
+  border: 1px solid #046c09;
   padding: .375rem .75rem;
   font-size: 1rem;
   line-height: 1.5;
