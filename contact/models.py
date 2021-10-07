@@ -1,6 +1,7 @@
 from django.db import models
 from profiles.models import UserProfile
 
+
 class Contact(models.Model):
 
     class Meta:
