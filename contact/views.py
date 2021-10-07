@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.shortcuts import render
+from profiles.models import UserProfile
 from .forms import ContactForm
 
 
@@ -9,7 +10,11 @@ def add_contact_item(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            form.save()
+            contact = form.save(commit=False)
+            if request.user.is_authenticated:
+                profile = UserProfile.objects.get(user=request.user)
+                contact.user_profile = profile
+            contact.save()
             messages.success(
                 request,
                 'Message sent successfully. Thank you for contacting us')
@@ -19,7 +24,6 @@ def add_contact_item(request):
                 'Message failed to send. Please check if the form is valid.')
 
     form = ContactForm()
-
     template = 'contact/contact.html'
     context = {
         'form': form,
