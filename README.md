@@ -1,9 +1,9 @@
 # MS4 Baby-Hero
 Baby Hero is an e-commerce web store offering a wide range of toys & accessories for babies under 1 year old. It is a full-stack application that is designed to help customers understand the usage of the products and its functional purpose. It is possible for unregistered users to get to know all the products in stock and purchase them with ease. Additionally, customers can register their profiles, save their personal information for faster checkout process and view order history. There is a news feed that broadcasts latest store updates for all the visitors of the site. Also users have a possibility to contact webshop administration with a help of a special contact form provided on the site.
 
-![mockup]()
+![mockup](README_files/multi-mockup.png)
 
-Live Website: [here.]()
+[Live Website](https://baby-hero.herokuapp.com/)
 
 ## Table of Contents
 
@@ -120,11 +120,12 @@ The website is responsive on all screen sizes, using Bootstrap4 features.
 The design of logo is created by myself that is simple, fun and memorable.
 ![img]()
 The colour scheme chosen for this project was inspired by warm bright colours of children products to give the website an attractive, fresh look. To balance and harmonize bright colors the white background is chosen. It gives a neutral look to the website with green and black nicely complementing.
-![img]()
 
-#FFFFFF White is the background of all pages on the website. The bright colour and the black text is easily readable on the white background. 
-#046c09 Green is used for for headings and some buttons seen throughout the website and dilutes the black and white palette. 
-#000000 Black is used for text and icons on the website. The black text is easily read on the white background. Black is also used throughout the application for buttons.
+![colors](README_files/color.png)
+
+* #FFFFFF White is the background of all pages on the website. The bright colour and the black text is easily readable on the white background. 
+* #046c09 Green is used for for headings and some buttons seen throughout the website and dilutes the black and white palette. 
+* #000000 Black is used for text and icons on the website. The black text is easily read on the white background. Black is also used throughout the application for buttons.
 
 The font-family "Lato" is used because of classical proportions to give the letterforms familiar harmony and elegance. The semi-rounded details of the letters give Lato a feeling of warmth with the feeling of the Summer.
 

@@ -144,9 +144,38 @@
 
     {% block page_header %}
     {% endblock %}
-
+    
+    <div class="content-footer-padding">
     {% block content %}
     {% endblock %}
+    </div>
+
+    <footer>
+        <div class="container-fluid">
+            <div class="row bg-white footer-padding">
+                <div class="col-sm-12 col-md-4 my-auto">
+                    <p class="text-center font-weight-bold">
+                        <a class="text-black" href="{% url 'contact' %}">Contact Us <i
+                                class="far fa-envelope" aria-hidden="true"></i></a>
+                    </p>
+                </div>
+                <div class="col-sm-12 col-md-4 my-auto">
+                    <p class="text-center text-black font-weight-bold">
+                        Copyright &copy; Darya Belarusik
+                    </p>
+                </div>
+                <div class="col-sm-12 text-center col-md-4 my-auto">
+                        <a rel="noreferrer" class="text-black social-link" href="https://www.linkedin.com/" target="_blank"> 
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i> </a>
+                        <a rel="noreferrer" class="text-black social-link" href="https://www.instagram.com/" target="_blank"> 
+                            <i class="fab fa-instagram" aria-hidden="true"></i> </a>
+                        <a rel="noreferrer" class="text-black social-link" href="https://www.facebook.com/" target="_blank"> 
+                            <i class="fab fa-facebook-square" aria-hidden="true"></i> </a>                               
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     {% block postloadjs %}
     <script type="text/javascript">
