@@ -5,7 +5,7 @@
   <head>
 
     {% block meta %}
-        <meta http-equiv="X-UA-Compatible" contents="ie=edge">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     {% endblock %}
@@ -165,20 +165,19 @@
                     </p>
                 </div>
                 <div class="col-sm-12 text-center col-md-4 my-auto">
-                        <a rel="noreferrer" class="text-black social-link" href="https://www.linkedin.com/" target="_blank"> 
-                            <i class="fab fa-linkedin-in" aria-hidden="true"></i> </a>
-                        <a rel="noreferrer" class="text-black social-link" href="https://www.instagram.com/" target="_blank"> 
-                            <i class="fab fa-instagram" aria-hidden="true"></i> </a>
-                        <a rel="noreferrer" class="text-black social-link" href="https://www.facebook.com/" target="_blank"> 
-                            <i class="fab fa-facebook-square" aria-hidden="true"></i> </a>                               
-                    </p>
+                    <a rel="noreferrer" class="text-black social-link" href="https://www.linkedin.com/" target="_blank"> 
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i> </a>
+                    <a rel="noreferrer" class="text-black social-link" href="https://www.instagram.com/" target="_blank"> 
+                        <i class="fab fa-instagram" aria-hidden="true"></i> </a>
+                    <a rel="noreferrer" class="text-black social-link" href="https://www.facebook.com/" target="_blank"> 
+                        <i class="fab fa-facebook-square" aria-hidden="true"></i> </a>                               
                 </div>
             </div>
         </div>
     </footer>
 
     {% block postloadjs %}
-    <script type="text/javascript">
+    <script>
         $(document).ready(function(){ $('.toast').toast('show'); })
     </script>
     {% endblock %}
