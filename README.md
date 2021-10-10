@@ -44,41 +44,41 @@ Live Website: [here.]()
 ### As a user I would like to:
 
 #### Navigation
-- * Easily understand the purpose of the website so that I can decide if it is relevant to me
-- * Have simple and self-explanatory navigation tools so that I can find products fast
-- * View multiple amount of products at once so that I can compare them and quicker choose the one I need
-- * View each product separately so that I can share a link to the product with others
-- * Be able to sort products by price so that I can easily compare product prices and find the cheapest products quicker
-- * Be able to filter products by type of environment where they are reccommended to be used so that I can make right decisions based on my needs
-- * Get responsive feedback from the web store on my actions so that I am aware of correctness of my actions.
+- Easily understand the purpose of the website so that I can decide if it is relevant to me
+- Have simple and self-explanatory navigation tools so that I can find products fast
+- View multiple amount of products at once so that I can compare them and quicker choose the one I need
+- View each product separately so that I can share a link to the product with others
+- Be able to sort products by price so that I can easily compare product prices and find the cheapest products quicker
+- Be able to filter products by type of environment where they are reccommended to be used so that I can make right decisions based on my needs
+- Get responsive feedback from the web store on my actions so that I am aware of correctness of my actions.
 
 #### User account
-- * Register an account so that I can have my personal account
-- * Login and logout so that I can easily access my personal information
-- * Recover my password so that I can get access to my personal account in case pasword was forgotten
-- * Receive an email after registration so that I can be sure that my account was registered successfully
-- * Have my personal profile page so that I can manage my payment/billing information and view order history
+- Register an account so that I can have my personal account
+- Login and logout so that I can easily access my personal information
+- Recover my password so that I can get access to my personal account in case pasword was forgotten
+- Receive an email after registration so that I can be sure that my account was registered successfully
+- Have my personal profile page so that I can manage my payment/billing information and view order history
 
 #### Shopping bag
-- * Be able add products to shopping bag so that I can make a purchase when I am ready
-- * See an overview of all added products so that I can make sure that I did everything correct
-- * Modify quantity and remove products in my shopping bag so that I can make corrections to my order before making a payment
-- * Add delivery information so that I can recieve products to the specified address after making a payment
+- Be able add products to shopping bag so that I can make a purchase when I am ready
+- See an overview of all added products so that I can make sure that I did everything correct
+- Modify quantity and remove products in my shopping bag so that I can make corrections to my order before making a payment
+- Add delivery information so that I can recieve products to the specified address after making a payment
 
 #### Payment and checkout
-- * Make a payment for products that are in my shopping bag so that I can recieve chosen products to the specified address
-- * Recieve a confirmation email with all of the order details so that I can have all the required information in case if emergency
+- Make a payment for products that are in my shopping bag so that I can recieve chosen products to the specified address
+- Recieve a confirmation email with all of the order details so that I can have all the required information in case if emergency
 
 
 #### News and Contact
-- * Contact the store owners so that I can leave my feedback/suggestion/complaint regarding my expierence using the site
-- * Be able to read latest updates from store admins so that I can be aware of all the latest news
+- Contact the store owners so that I can leave my feedback/suggestion/complaint regarding my expierence using the site
+- Be able to read latest updates from store admins so that I can be aware of all the latest news
 
 ### As a store owner I would like to:
 
-- * Add/modify/delete products so that I can be flexible and manage products that are avaialbe for purchase on the site
-- * Add/modify/delete news articles so I can update customers with any important information
-- * Read messages submitted by contact form so that I can act on cutomer's feedback appropriately.
+- Add/modify/delete products so that I can be flexible and manage products that are avaialbe for purchase on the site
+- Add/modify/delete news articles so I can update customers with any important information
+- Read messages submitted by contact form so that I can act on cutomer's feedback appropriately.
 
 <span  id="strategy"></span>
 ### Strategy and Scope
@@ -137,12 +137,12 @@ The font-family "Lato" is used because of classical proportions to give the lett
 #### General
 
 1. Navigation bar on top of each page that consists of:
-  a Site logo
-  b Search bar
-  c Main mavigation menu
-  d Menu entries to Login/Register for anonymous users
-  e My Account menu entry with a dropdown sub menu for authorized users
-  f Shopping bag menu entry with a total amount displayed
+    * Site logo
+    * Search bar
+    * Main manvigation menu
+    * Menu entries to Login/Register for anonymous users
+    * My Account menu entry with a dropdown sub menu for authorized users
+    * Shopping bag menu entry with a total amount displayed
 2. Responsive layout that is adapted to desktop and mobile screen sizes.
 3. Supported by all of the most popular web browsers.
 4. Instant feedback from the site to the user with the help of pop-up messages when important actions take place.
@@ -150,9 +150,9 @@ The font-family "Lato" is used because of classical proportions to give the lett
 #### User can:
 1. View multiple products on single page.
 2. View each product on separate page.
-3. Search box where products can be found by name or descriprion.
+3. Search box where products can be found by name or description.
 4. Sort products by price, name and categories, both ascending and descending.
-5. Filter prodcuts by categories.
+5. Filter products by categories.
 6. Add product to the shopping bag with specified quantity.
 7. View shopping bag.
 8. Update quantity or Remove product(s) from the shopping bag.
@@ -160,15 +160,14 @@ The font-family "Lato" is used because of classical proportions to give the lett
 10. Submit delivery information and payment details on checkout page.
 11. Complete an order and make a payment.
 12. View order details on payment completion.
-13. Recieve an email with order details on payment completion.
-Authentication functionality that makes it possible to login/register for users.
+13. Receive an email with order details on payment completion.
 14. View latest news and updates from the store owners.
 15. Contact store owners directly from the website.
 16. Register or Login to private user account.
 
 #### Authorised User can:
 1. View My Profile page
-2. Updade personal delivery information that will be used to prefill checkot form
+2. Update personal delivery information that will be used to prefill checkout form
 3. View order history
 4. Logout from the site
 
@@ -291,6 +290,28 @@ With manual testing we use existing <a  href="#userstories">User Stories</a> and
 | Add/modify/delete products                                                               	| Logged in as admin on the website. 1. Opened a page for adding product by navigating to "My profile" -> "Add product". 2. Filled in all required fields. Clicked "Add product". 3. A page with a newly added product opened. Clicked "Edit". 4. On edit product page changed description and price. Clicked "Update product". 5. Page with edited product opened. Verified that description and price got modified. 6. Clicked "Delete". Got redirected to all products page. Notification at top right corner said that the product was successfully deleted. Verified that it does not exist on all products page.                                                                                              	| PASSED 	|
 | Add/modify/delete news articles                                                          	| Logged in as admin on the website. 1. Opened a page for adding news article by navigating to "My profile" -> "Add News Article". 2. Filled in all required fields. Clicked "Add News Article". 3. A page with a all news opened. Clicked "Edit" on newly added article. 4. On edit news page changed description and image. Clicked "Update News Article". 5. Page with all news opened. Verified that description and image got modified. 6. Clicked "Delete". Got a popup message that verifies that I really want to delete it Clicked "Yes". Got redirected to news page. Notification at top right corner said that the news article was successfully deleted. Verified that it does not exist on news page. 	| PASSED 	|
 | Read messages submitted by contact form                                                  	| 1. Navigated to contact form page by clicking on "Contact" menu item. 2. Filled in all required fields. Clicked "Send".  Got a notification message on top right corner saying that the contact form was submitted successfully. 3. Opened Django administration panel. Logged in as admin. 4. Opened "Messages" under "Contact" app. 5. Verified that created contact message exist and I can see all the fields.                                                                                                                                                                                                                                                                                                	| PASSED 	|
+
+
+#### Features
+Some features got covered by user stories testing. That's why in the following table I skip testing same functionality.
+
+| Feature                                                                                                                                                                                                                                                                         | Action                                                                                                                                                                                                                                                                     | Result |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|
+| Navigation bar on top of each page that consists of site logo, search bar, main navigation menu, menu entries to login/register for anonymous users, my account menu entry with a dropdown sub menu for authorized users, shopping bag menu entry with a total amount displayed | Clicked through all site pages, the menu exists with all functionality described                                                                                                                                                                                           | PASSED |
+| Responsive layout that is adapted to desktop and mobile screen sizes.                                                                                                                                                                                                           |                                                                                                                                                                                                                                                                            |        |
+| Supported by all of the most popular web browsers.                                                                                                                                                                                                                              |                                                                                                                                                                                                                                                                            |        |
+| Instant feedback from the site to the user with the help of pop-up messages when important actions take place.                                                                                                                                                                  | Notification messages on top right corner are informing the user through login/logout process, when any form is successfully processed or not, when doing modifications to shopping bag, when doing payments etc.                                                          | PASSED |
+| Search box where products can be found by name or description.                                                                                                                                                                                                                  | Typed partly name of a random product. Clicked "Search". The products was found. Typed in part of random product description. Clicked "Search". Searched product was found.                                                                                                | PASSED |
+| Sort products by price, name and categories, both ascending and descending.                                                                                                                                                                                                     | Tried all possible options in Sort dropdown on products page. Verified that sorting is done correct.                                                                                                                                                                       | PASSED |
+| Filter products by categories.                                                                                                                                                                                                                                                  | Used "Skill" and "Environment" menu entries to select specific products category. Verified that products of selected category are shown.                                                                                                                                   | PASSED |
+| Add product to the shopping bag with specified quantity.                                                                                                                                                                                                                        | Opened a product detail page of a random product. Clicked "Add to bag". Notification message told that the product was added to the shopping bag. Total bag amount in top right corner got updated.                                                                        | PASSED |
+| View shopping bag, update quantity or remove product(s) from the shopping bag.                                                                                                                                                                                                  | Opened shopping bag view by clicking on the bag icon in top right corner with two products in it. Shopping bag page opened with products overview. Increased the quantity by 1 by clicking "+" sign and "update" of first product. Clicked "delete" for a second product.  | PASSED |
+| View checkout page, submit delivery information and payment details on checkout page.                                                                                                                                                                                           | Clicked "Secured Checkout" in shopping bag with products in it. Filled in all required fields including personal, delivery and payment infromation.                                                                                                                        | PASSED |
+| Complete an order and make a payment. View order details on payment completion.                                                                                                                                                                                                 | Clicked "Complete Order" on checkout page. Got redirected on the page with order details and a message that same order details were sent to my email.                                                                                                                      | PASSED |
+| Receive an email with order details on payment completion.                                                                                                                                                                                                                      | Received and email on the specified email address after making a payment.                                                                                                                                                                                                  | PASSED |
+| Register or Login to private user account, logout from the site                                                                                                                                                                                                                 | Registered an account. Logged in. Logged out. Everything worked correctly.                                                                                                                                                                                                 | PASSED |
+| View My Profile page / order history                                                                                                                                                                                                                                            | While logged in opened My Profile page in "My Profile" menu. Viewed my personal information and past orders that I have done.                                                                                                                                              | PASSED |
+| Update personal delivery information that will be used to prefill checkout form                                                                                                                                                                                                 | On my profile page filled in some fields regarding my personal information, clicked "Update information". Then tried to make a purchase and verified that same information gets prefilled in the checkout page.                                                            | PASSED |
 
 ### Testing using external tools
 
