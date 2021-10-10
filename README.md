@@ -44,41 +44,41 @@ Live Website: [here.]()
 ### As a user I would like to:
 
 #### Navigation
-- **Easily understand the purpose of the website** so that **I can decide if it is relevant to me**
-- **Have simple and self-explanatory navigation tools** so that I can **find products fast**
-- **View multiple amount of products at once** so that I can **compare them and quicker choose the one I need**
-- **View each product separately** so that I can **share a link to the product with others**
-- **Be able to sort products by price** so that I can **easily compare product prices and find the cheapest products quicker**
-- **Be able to filter products by type of environment where they are reccommended to be used** so that I can **make right decisions based on my needs**
-- **Get responsive feedback from the web store on my actions** so that I am **aware of correctness of my actions**.
+- * Easily understand the purpose of the website so that I can decide if it is relevant to me
+- * Have simple and self-explanatory navigation tools so that I can find products fast
+- * View multiple amount of products at once so that I can compare them and quicker choose the one I need
+- * View each product separately so that I can share a link to the product with others
+- * Be able to sort products by price so that I can easily compare product prices and find the cheapest products quicker
+- * Be able to filter products by type of environment where they are reccommended to be used so that I can make right decisions based on my needs
+- * Get responsive feedback from the web store on my actions so that I am aware of correctness of my actions.
 
 #### User account
-- **Register an account** so that I can **have my personal account**
-- **Login and logout** so that I can **easily access my personal information**
-- **Recover my password** so that I can **get access to my personal account in case pasword was forgotten**
-- **Receive an email after registration** so that I can **be sure that my account was registered successfully**
-- **Have my personal profile page** so that I can **manage my payment/billing information and view order history**
+- * Register an account so that I can have my personal account
+- * Login and logout so that I can easily access my personal information
+- * Recover my password so that I can get access to my personal account in case pasword was forgotten
+- * Receive an email after registration so that I can be sure that my account was registered successfully
+- * Have my personal profile page so that I can manage my payment/billing information and view order history
 
 #### Shopping bag
-- **Be able add products to shopping bag** so that I can **make a purchase when I am ready**
-- **See an overview of all added products** so that I can **make sure that I did everything correct**
-- **Modify quantity and remove products in my shopping bag** so that I can **make corrections to my order before making a payment**
-- **Add delivery information** so that I can **recieve products to the specified address after making a payment**
+- * Be able add products to shopping bag so that I can make a purchase when I am ready
+- * See an overview of all added products so that I can make sure that I did everything correct
+- * Modify quantity and remove products in my shopping bag so that I can make corrections to my order before making a payment
+- * Add delivery information so that I can recieve products to the specified address after making a payment
 
 #### Payment and checkout
-- **Make a payment for products that are in my shopping bag** so that I can **recieve chosen products to the specified address**
-- **Recieve a confirmation email with all of the order details** so that I can **have all the required information in case if emergency**
+- * Make a payment for products that are in my shopping bag so that I can recieve chosen products to the specified address
+- * Recieve a confirmation email with all of the order details so that I can have all the required information in case if emergency
 
 
 #### News and Contact
-- **Contact the store owners** so that I can **leave my feedback/suggestion/complaint regarding my expierence using the site**
-- **Be able to read latest updates from store admins** so that I can **be aware of all the latest news**
+- * Contact the store owners so that I can leave my feedback/suggestion/complaint regarding my expierence using the site
+- * Be able to read latest updates from store admins so that I can be aware of all the latest news
 
 ### As a store owner I would like to:
 
-- **Add/modify/delete products** so that I can **be flexible and manage products that are avaialbe for purchase on the site**
-- **Add/modify/delete news articles** so I can **update customers with any important information**
-- **Read messages submitted by contact form** so that I can **act on cutomer's feedback appropriately**.
+- * Add/modify/delete products so that I can be flexible and manage products that are avaialbe for purchase on the site
+- * Add/modify/delete news articles so I can update customers with any important information
+- * Read messages submitted by contact form so that I can act on cutomer's feedback appropriately.
 
 <span  id="strategy"></span>
 ### Strategy and Scope
@@ -122,10 +122,8 @@ The design of logo is created by myself that is simple, fun and memorable.
 The colour scheme chosen for this project was inspired by warm bright colours of children products to give the website an attractive, fresh look. To balance and harmonize bright colors the white background is chosen. It gives a neutral look to the website with green and black nicely complementing.
 ![img]()
 
-#FFFFFF White is the background of all pages on the website. The bright colour and the black text is easily readable on the white background.
-
-#046c09 Green is used for for headings and some buttons seen throughout the website and dilutes the black and white palette.
-
+#FFFFFF White is the background of all pages on the website. The bright colour and the black text is easily readable on the white background. 
+#046c09 Green is used for for headings and some buttons seen throughout the website and dilutes the black and white palette. 
 #000000 Black is used for text and icons on the website. The black text is easily read on the white background. Black is also used throughout the application for buttons.
 
 The font-family "Lato" is used because of classical proportions to give the letterforms familiar harmony and elegance. The semi-rounded details of the letters give Lato a feeling of warmth with the feeling of the Summer.
@@ -190,7 +188,7 @@ Authentication functionality that makes it possible to login/register for users.
 
 Database design is shown on the picture below:
 
-![Database Design](database_readme.png)
+![Database Design](README_files/database_readme.png)
 
 - Models with orange background are coming from Django and its libraries
 - I decided to have two separate models for two different types of categories.
@@ -204,10 +202,10 @@ Database design is shown on the picture below:
 - Python - for handle backend functionality. 
 
 ### Frameworks and libraries used:
-[Django]() - Python Web framework that encourages rapid development and clean, pragmatic design. 
-[Bootstrap4]() - front-end framework for faster and easier web development including forms, buttons and navigations. 
-[Stripe]()- payment processing software and application programming interfaces for e-commerce websites and mobile applications.
-[Django Allauth]() - an integrated set of Django applications addressing authentication, registration and account management. 
+[Django](https://www.djangoproject.com/) - Python Web framework that encourages rapid development and clean, pragmatic design. 
+[Bootstrap4](https://getbootstrap.com/) - front-end framework for faster and easier web development including forms, buttons and navigations. 
+[Stripe](https://stripe.com/en-gb-se)- payment processing software and application programming interfaces for e-commerce websites and mobile applications.
+[Django Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) - an integrated set of Django applications addressing authentication, registration and account management. 
 [JQuery](https://jquery.com/) - for making the site interactive.   
 [Font Awesome](https://fontawesome.com/) - for using icons.  
 [Google Fonts](https://fonts.google.com/) -  for font of the website.  
@@ -231,7 +229,7 @@ Database design is shown on the picture below:
 
 Some of the code was taken from the sources:
 * [Stackoverflow](https://stackoverflow.com/) - 
-* [CodeInstitute course](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+DCP101+2017_T3/courseware/9e2f12f5584e48acb3c29e9b0d7cc4fe/6449dcd23ca14016aa83dc7313d91a02/?child=first) – 
+* [CodeInstitute course]() – 
 
 <span  id="testing"></span>
 
@@ -294,6 +292,21 @@ With manual testing we use existing <a  href="#userstories">User Stories</a> and
 | Read messages submitted by contact form                                                  	|                                                                                                                                                                                                                                        	|        	|
 |                                                                                          	|                                                                                                                                                                                                                                        	|        	|
 |                                                                                          	|                                                                                                                                                                                                                                        	|        	|
+
+### Testing using external tools
+
+For testing general code style formatting I used several libraries and tools:
+
+#### Python
+[Flake8](https://flake8.pycqa.org/en/latest/) libary was used to reformat code and fix minor issues.
+Run it with a follwing command in the terminal:
+```
+python -m flake8
+```
+I haven't fixed some warnings for example in migration files where the code is autogenerated. Also in _settings.py_ some lines were too long because of very long library names.
+I added special flake comments to ignore such warnings in whole files or specific lines. You can read more about ignore comments [here](https://flake8.pycqa.org/en/3.1.1/user/ignoring-errors.html).
+
+
 <span  id="knownbugs"></span>
 ### Known Bugs
 
