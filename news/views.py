@@ -9,7 +9,10 @@ def all_news(request):
     """A view to show all news"""
 
     all_news = News.objects.all().order_by("-date_added")
-    context = {'news': all_news}
+    context = {
+        'news': all_news,
+        'show_without_bag': True
+    }
     return render(request, 'news/news.html', context)
 
 
@@ -37,8 +40,8 @@ def add_news_item(request):
     template = 'news/add_news.html'
     context = {
         'form': form,
+        'show_without_bag': True
     }
-
     return render(request, template, context)
 
 
@@ -72,6 +75,7 @@ def edit_news_item(request, news_id):
     context = {
         'form': form,
         'news_item': news_item,
+        'show_without_bag': True
     }
     return render(request, template, context)
 

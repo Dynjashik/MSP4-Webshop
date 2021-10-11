@@ -28,7 +28,7 @@ def profile(request):
     context = {
         'form': form,
         'orders': orders,
-        'on_profile_page': True
+        'show_without_bag': True
     }
 
     return render(request, template, context)

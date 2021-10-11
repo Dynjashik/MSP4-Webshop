@@ -27,6 +27,6 @@ def add_contact_item(request):
     template = 'contact/contact.html'
     context = {
         'form': form,
+        'show_without_bag': True
     }
-
     return render(request, template, context)
