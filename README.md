@@ -331,7 +331,22 @@ I added special flake comments to ignore such warnings in whole files or specifi
 CSS is tested by [The W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/). No errors are found. There are only warnings regarding bootstrap libraries.
 
 #### HTML
-HTML is tested by [Nu Html Checker](https://validator.w3.org/nu/).
+HTML is tested by [Nu Html Checker](https://validator.w3.org/nu/). All pages were tested, no errors & warnings found.
+
+
+#### Javascript
+Javascript was validated by [JSHint](https://jshint.com/). There was a warning on multiple scripts
+
+```
+'template literal syntax' is only available in ES6 (use 'esversion: 6')
+```
+
+As a suggested fix I added _.jshintrc_ file in root directory with the following content:
+```
+{
+    "esversion": 6
+}
+```
 
 
 <span  id="knownbugs"></span>
