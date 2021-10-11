@@ -2,73 +2,76 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4">Latest News</h2>
-                <hr>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-10 offset-1">
-                <ul class="timeline">
-                {% for news_item in news %}
-                    <li>
-                        <div class="news-header">
-                            <h3 class="news-title">{{ news_item.title }}</h3>
-                            <h6 class="news-date">{{ news_item.date_added }}</h6>
-                        </div>
-                        {% if request.user.is_superuser %}
-                        <small>
-                            <a href="{% url 'edit_news_item' news_item.id %}">Edit</a> |
-                            <a href="" class="text-danger" data-toggle="modal" data-target="#deleteModal">Delete</a>
-                            <!-- Modal -->
-                            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteNewsLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                    <h5 class="modal-title" id="deleteNewsLabel">Delete News Article</h5>
-                                    </div>
-                                    <div class="modal-body">
-                                    Are you sure you want to delete "{{ news_item.title }}" news article?
-                                    </div>
-                                    <div class="modal-footer">
-                                    <a class="btn btn-secondary" data-dismiss="modal">No</a>
-                                    <a class="btn btn-primary" href="{% url 'delete_news_item' news_item.id %}">Yes</a>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                        </small>
-                        {% endif %}
-                        <div class="row news-body">
-                            {% if news_item.image %}
-                            <div class="col-md-4 col-sm-12">
-                                <img class="card-img-top img-fluid news-img" src="{{ MEDIA_URL }}{{ news_item.image }}" alt="{{ news_item.title }}">
-                            </div>
-                            <div class="col-md-8 col-sm-12">
-                                <p>{{ news_item.description }}</p>
-                            </div>
-                            {% else %}
-                            <div class="col-md-12 col-sm-12">
-                                <p>{{ news_item.description }}</p>
-                            </div>
-                            {% endif %}
-                        </div>
-                    </li>
-                {% endfor %}
-                </ul>
-            </div>
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="logo-font mb-4">Latest News</h2>
+            <hr>
         </div>
     </div>
+    <div class="row">
+        <div class="col-10 offset-1">
+            <ul class="timeline">
+                {% for news_item in news %}
+                <li>
+                    <div class="news-header">
+                        <h3 class="news-title">{{ news_item.title }}</h3>
+                        <h6 class="news-date">{{ news_item.date_added }}</h6>
+                    </div>
+                    {% if request.user.is_superuser %}
+                    <small>
+                        <a href="{% url 'edit_news_item' news_item.id %}">Edit</a> |
+                        <a href="" class="text-danger" data-toggle="modal" data-target="#deleteModal">Delete</a>
+                        <!-- Modal -->
+                        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteNewsLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="deleteNewsLabel">Delete News Article</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        Are you sure you want to delete "{{ news_item.title }}" news article?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a class="btn btn-secondary" data-dismiss="modal">No</a>
+                                        <a class="btn btn-primary"
+                                            href="{% url 'delete_news_item' news_item.id %}">Yes</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </small>
+                    {% endif %}
+                    <div class="row news-body">
+                        {% if news_item.image %}
+                        <div class="col-md-4 col-sm-12">
+                            <img class="card-img-top img-fluid news-img" src="{{ MEDIA_URL }}{{ news_item.image }}"
+                                alt="{{ news_item.title }}">
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <p>{{ news_item.description }}</p>
+                        </div>
+                        {% else %}
+                        <div class="col-md-12 col-sm-12">
+                            <p>{{ news_item.description }}</p>
+                        </div>
+                        {% endif %}
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
 {% endblock %}

@@ -1,5 +1,5 @@
 // Increment quantity
-$('.increment-qty').click(function(e) {
+$('.increment-qty').click(function (e) {
     e.preventDefault();
     var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
     var currentValue = parseInt($(closestInput).val());
@@ -9,7 +9,7 @@ $('.increment-qty').click(function(e) {
 });
 
 // Decrement quantity
-$('.decrement-qty').click(function(e) {
+$('.decrement-qty').click(function (e) {
     e.preventDefault();
     var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
     var currentValue = parseInt($(closestInput).val());
@@ -29,13 +29,13 @@ function handleEnableDisable(itemId) {
 
 // Ensure proper enabling/disabling of all inputs on page load
 var allQtyInputs = $('.qty_input');
-for(var i = 0; i < allQtyInputs.length; i++){
+for (var i = 0; i < allQtyInputs.length; i++) {
     var itemId = $(allQtyInputs[i]).data('item_id');
     handleEnableDisable(itemId);
 }
 
 // Check enable/disable every time the input is changed
-$('.qty_input').change(function() {
+$('.qty_input').change(function () {
     var itemId = $(this).data('item_id');
     handleEnableDisable(itemId);
 });
