@@ -157,10 +157,8 @@
     {% block page_header %}
     {% endblock %}
 
-    <div class="content-footer-padding">
-        {% block content %}
-        {% endblock %}
-    </div>
+    {% block content %}
+    {% endblock %}
 
     <footer>
         <div class="container-fluid">
@@ -190,7 +188,7 @@
     </footer>
 
     {% block postloadjs %}
-    <script type="text/javascript" src="{% static 'js/bag.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/toast_info.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/toast_success.js' %}"></script>
     {% endblock %}
