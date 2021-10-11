@@ -176,9 +176,9 @@
     </footer>
 
     {% block postloadjs %}
-    <script>
-        $(document).ready(function(){ $('.toast').toast('show'); });
-    </script>
+        <script type="text/javascript" src="{% static 'js/bag.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/toast_info.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/toast_success.js' %}"></script>
     {% endblock %}
   </body>
 </html>

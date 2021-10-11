@@ -203,8 +203,9 @@ input[name='q']::placeholder {
   height: 42px;
   width: 42px;
   position: fixed;
-  bottom: 10px;
+  bottom: 5px;
   right: 10px;
+  z-index: 1;
 }
 
 .btt-link,
@@ -458,7 +459,6 @@ footer {
 
 .content-footer-padding{
   padding-bottom: 70px;
-
 }
 
 .social-link{
