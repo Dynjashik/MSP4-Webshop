@@ -443,7 +443,7 @@ ul.timeline>li:before {
 .img-height>a {
   align-items: center;
   display: flex;
-  min-height: 260px;
+  min-height: 280px;
 }
 
 /* Footer */
@@ -467,4 +467,8 @@ footer {
 .social-link {
   font-size: 20px;
   margin: 5px;
+}
+
+.blue-link {
+  color: #0068d9;
 }
