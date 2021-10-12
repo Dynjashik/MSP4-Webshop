@@ -30,7 +30,7 @@
                     </div>
                     {% if request.user.is_superuser %}
                     <small>
-                        <a href="{% url 'edit_news_item' news_item.id %}">Edit</a> |
+                        <a class="blue-link" href="{% url 'edit_news_item' news_item.id %}">Edit</a> |
                         <a href="" class="text-danger" data-toggle="modal" data-target="#deleteModal">Delete</a>
                         <!-- Modal -->
                         <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteNewsLabel"

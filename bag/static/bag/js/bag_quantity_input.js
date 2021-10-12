@@ -20,11 +20,11 @@ $('.decrement-qty').click(function (e) {
 
 // Disable +/- buttons outside 1-99 range
 function handleEnableDisable(itemId) {
-    var currentValue = parseInt($(`#id_qty_${itemId}`).val());
+    var currentValue = parseInt($(`#id_qty_bag_${itemId}`).val());
     var minusDisabled = currentValue < 2;
     var plusDisabled = currentValue > 98;
-    $(`#decrement-qty_${itemId}`).prop('disabled', minusDisabled);
-    $(`#increment-qty_${itemId}`).prop('disabled', plusDisabled);
+    $(`#decrement-qty_bag_${itemId}`).prop('disabled', minusDisabled);
+    $(`#increment-qty_bag_${itemId}`).prop('disabled', plusDisabled);
 }
 
 // Ensure proper enabling/disabling of all inputs on page load

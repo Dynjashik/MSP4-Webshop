@@ -15,8 +15,6 @@ $('.remove-item').click(function (e) {
     var data = {
         'csrfmiddlewaretoken': window.CSRF_TOKEN
     };
-    console.log(url)
-    console.log(data)
     $.post(url, data)
         .done(function () {
             location.reload();

@@ -1,0 +1,21 @@
+[
+    {
+        "pk": 1,
+        "model": "news.news",
+        "fields": {
+            "title": "Welcome to Baby Hero!",
+            "description": "We welcome you at our new store BabyHero! Here you can find all sorts of products for babies for the age under 1 year old. Our main focus stays on toys that develop your baby's various skills while playing! Our main menu will help you to navigate through different types of skills infants mostly develop at that age. Please don't forget to register and create an account. In the future we will have valuable discounts and perks for our loyal customers! Stay tuned!",
+            "image": "news_1.jpg",
+            "date_added": "2021-10-07 19:59"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "news.news",
+        "fields": {
+            "title": "We need your feedback!",
+            "description": "We value every our customer and want to provide the best products for your children and shopping expierence for you. That's why we added contact page that you can access from main menu. Please kindly leave your feedback or concerns regarding products or store funtionality. We will carefully listen to all of your great suggestions and improve step-by-step. Wish you a pleasant shopping!",
+            "date_added": "2021-10-11 12:22"
+        }
+    }
+]
