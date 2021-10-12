@@ -108,7 +108,7 @@ The successful checkout page will display an order summary and a message stating
 <span  id="skeleton"></span>
 ### Skeleton
 
-Mockup of the website was created in ["Balsamiq Wireframes"]().
+Mockup of the website was created in ["Balsamiq Wireframes"](README_files/wireframes.pdf).
 
 <span  id="surface"></span>
 ### Surface
@@ -117,8 +117,9 @@ The primary design goal is to attract the user to explore the application. The l
 It's a visually appealing application, designed an intuitive and easy to navigate website. 
 The website is responsive on all screen sizes, using Bootstrap4 features. 
 
-The design of logo is created by myself that is simple, fun and memorable.
-![img]()
+The design of logo is created by myself that is simple, fun and memorable.  
+![img](README_files/logo.png) 
+
 The colour scheme chosen for this project was inspired by warm bright colours of children products to give the website an attractive, fresh look. To balance and harmonize bright colors the white background is chosen. It gives a neutral look to the website with green and black nicely complementing.
 
 ![colors](README_files/color.png)
@@ -196,17 +197,17 @@ Database design is shown on the picture below:
 
 ### Languages used:
 
-- HTML5 - for basic content and structure of the website. 
-- CSS3 - for style the website. 
-- Javascript - for interactivity throughout website. 
-- Python - for handle backend functionality. 
+- HTML5 - for basic content and structure of the website.  
+- CSS3 - for style the website.  
+- Javascript - for interactivity throughout website.  
+- Python - for handle backend functionality.  
 
 ### Frameworks and libraries used:
-[Django](https://www.djangoproject.com/) - Python Web framework that encourages rapid development and clean, pragmatic design. 
-[Bootstrap4](https://getbootstrap.com/) - front-end framework for faster and easier web development including forms, buttons and navigations. 
-[Stripe](https://stripe.com/en-gb-se)- payment processing software and application programming interfaces for e-commerce websites and mobile applications.
-[Django Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) - an integrated set of Django applications addressing authentication, registration and account management. 
-[JQuery](https://jquery.com/) - for making the site interactive.   
+[Django](https://www.djangoproject.com/) - Python Web framework that encourages rapid development and clean, pragmatic design.  
+[Bootstrap4](https://getbootstrap.com/) - front-end framework for faster and easier web development including forms, buttons and navigations.  
+[Stripe](https://stripe.com/en-gb-se)- payment processing software and application programming interfaces for e-commerce websites and mobile applications.  
+[Django Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) - an integrated set of Django applications addressing authentication, registration and account management.  
+[JQuery](https://jquery.com/) - for making the site interactive.  
 [Font Awesome](https://fontawesome.com/) - for using icons.  
 [Google Fonts](https://fonts.google.com/) -  for font of the website.  
 [Balsamiq](https://balsamiq.com/) - for creating the wireframe. 
@@ -221,7 +222,7 @@ Database design is shown on the picture below:
 [Mockup generator](http://techsini.com/multi-mockup/index.php) - for testing responsive website on various devices.  
 [W3 Schools](https://www.w3schools.com/) - for HTML, CSS, JS, Python tips.  
 [Stackoverflow](stackoverflow.com) - for finding answers on questions.  
-[Webformatter](https://webformatter.com) - for beautifying HTML, CSS, Javascript codes. 
+[Webformatter](https://webformatter.com) - for beautifying HTML, CSS, Javascript codes.  
 [Datetime](https://docs.python.org/3/library/datetime.html#module-datetime) - for manipulating dates and times. 
 
 
@@ -620,7 +621,7 @@ All content is written by developer Darya Belarusik.
 Image for background, product images were taken from:
 
 
-Logo of the website in navigation menu is created by Darya. 
+Logo of the website in navigation menu is created by Darya, using the image from the source [freedesignfile.com](https://freedesignfile.com/367673-baby-hero-logo-vector/)
 
 ### Acknowledgements
 
