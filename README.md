@@ -427,6 +427,7 @@ python3 manage.py migrate
 python3 manage.py loaddata skill_categories
 python3 manage.py loaddata env_categories
 python3 manage.py loaddata products
+python3 manage.py loaddata news
 ```
 12. Create superuser (admin) for your app by running the following command and follow instructions in the console:
 ```
