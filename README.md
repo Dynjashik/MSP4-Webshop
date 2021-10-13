@@ -145,6 +145,7 @@ The font-family "Lato" is used because of classical proportions to give the lett
     * Menu entries to Login/Register for anonymous users
     * My Account menu entry with a dropdown sub menu for authorized users
     * Shopping bag menu entry with a total amount displayed
+2. Footer with social links and copyright message.
 2. Responsive layout that is adapted to desktop and mobile screen sizes.
 3. Supported by all of the most popular web browsers.
 4. Instant feedback from the site to the user with the help of pop-up messages when important actions take place.
@@ -223,7 +224,8 @@ Database design is shown on the picture below:
 [W3 Schools](https://www.w3schools.com/) - for HTML, CSS, JS, Python tips.  
 [Stackoverflow](stackoverflow.com) - for finding answers on questions.  
 [Webformatter](https://webformatter.com) - for beautifying HTML, CSS, Javascript codes.  
-[Datetime](https://docs.python.org/3/library/datetime.html#module-datetime) - for manipulating dates and times. 
+[Drawio](https://draw.io) - for creating database schema.  
+[Markdown Table Generator](https://https://www.tablesgenerator.com/markdown_tables) - for creating markdown tables used in Readme file.  
 
 
 ### Codes used:
@@ -231,6 +233,9 @@ Database design is shown on the picture below:
 Some of the code was taken from the sources:
 * [Stackoverflow](https://stackoverflow.com/) - 
 * [CodeInstitute course]() – 
+* [News page CSS style](https://www.web-eau.net/blog/10-latest-blog-html-css-snippets) -
+* [Create admin user in Django Tests](https://stackoverflow.com/questions/3495114/how-to-create-admin-user-in-django-tests-py) -
+* [CSRF token use in external JavaScript file](https://newbedev.com/403-forbidden-error-when-making-an-ajax-post-request-in-django-framework) -
 
 <span  id="testing"></span>
 
@@ -263,6 +268,16 @@ In apps where we have forms we test required and non-required form fields mainly
 ### Manual testing
 
 With manual testing we use existing <a  href="#userstories">User Stories</a> and <a  href="#features">Features</a> to ensure that all required functionality works correctly and requirements are met.
+
+#### Stripe payments
+Real Stripe payment are not configured yet. As for testing use the following card number:
+```
+4242 4242 4242 4242
+```
+
+#### Product data
+
+All products, its pictures, description and prices were taken from [Amazon.com](https://amazon.com/) and [Target.com](https://target.com/)
 
 #### User Stories
 | Story                                                                                    	| Action                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            	| Result 	|
@@ -315,6 +330,8 @@ Some features got covered by user stories testing. That's why in the following t
 | View My Profile page / order history                                                                                                                                                                                                                                            | While logged in opened My Profile page in "My Profile" menu. Viewed my personal information and past orders that I have done.                                                                                                                                              | PASSED |
 | Update personal delivery information that will be used to prefill checkout form                                                                                                                                                                                                 | On my profile page filled in some fields regarding my personal information, clicked "Update information". Then tried to make a purchase and verified that same information gets prefilled in the checkout page.                                                            | PASSED |
 
+![Homepage](README_files/home.png)
+
 ### Testing using external tools
 
 For testing general code style formatting I used several libraries and tools:
@@ -351,12 +368,68 @@ As a suggested fix I added _.jshintrc_ file in root directory with the following
 
 
 <span  id="knownbugs"></span>
-### Known Bugs
+
+### Bugs & Challenges
+
+#### Knows Bugs
+
+##### Increment/decrement buttons on shopping bag page, desktop version
+
+There is a known bug that I didn't figure out how to fix. In order to reproduce it:
+1. Add any product to the shopping bag.
+2. Open shopping bag.
+3. Decrement product quantity lower than 1.
+
+Expected behaviour: "-" button gets disabled when the user tries to enter quantity less than 1 or more than 99. For some reason it is possible to do it here.
+Important to note that when you change to mobile version everything works fine. And also everything works (both desktop and mobile) on product detail page where same kind of widget is used.
+But when the user clicks "Update" with quantity less than 1 the product gets deleted from the shopping bag. Therefore it is impossible to buy a product with an incorrect amount.
+
+![IncrementBug](README_files/increment_bug.png)
+![IncrementBug2](README_files/increment_bug2.png)
+
+
+#### Solved Bugs & Challenges
+
+##### Many to many relationships in Django model
+
+In order to support multiple categories per one product I had to introduce many to many relationships in my database schema.
+[This article](https://www.sankalpjonna.com/learn-django/the-right-way-to-use-a-manytomanyfield-in-django) helped me to achieve this goal.
+
+##### ManyToMany Field in admin list_display
+
+In Django administration panel I need to show all the product's categories for admin.
+I found a solution in [this stackoverflow answer](https://stackoverflow.com/questions/18108521/many-to-many-in-list-display-django)
+
+##### Test_views.py return 301 error code
+
+When writing some tests for views I faced error with code 301. The problem was that some requests have redirections and in order for test to redirect
+we need to add follow=True like so:
+```
+response = self.client.get("/products/add/", follow=True)
+```
+
+##### Concatinate strings when some of them might be NULL
+
+When prefiling checkout form with profile information I concatinate name and surname into one field. So we need to handle cases for either or both of them are NULL. I found an [answer on Stackoverflow](https://stackoverflow.com/questions/8626694/joining-multiple-strings-if-they-are-not-empty-in-python):
+```
+strings = ['Darya','']
+' '.join(filter(None, strings))
+```
+
+##### Use csrftoken in an external JS file
+
+I decided to move all Javascript code into separate js files to make code cleaner. Then there was a problem that csrftoken was not founf in js file.
+I solved by some [suggestion I found online](https://newbedev.com/403-forbidden-error-when-making-an-ajax-post-request-in-django-framework) and saved csrftoken into "window" object in a separate JS script in html file:
+```
+<script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
+```
 
 <span  id="deployment"></span>
+
 ## Deployment
 
 <span  id="deploy-heroku-aws"></span>
+
 ### Heroku & AWS
 Instructions below describe how to deploy this project using Heroku and Amazon Web Services (AWS).
 
