@@ -330,7 +330,32 @@ Some features got covered by user stories testing. That's why in the following t
 | View My Profile page / order history                                                                                                                                                                                                                                            | While logged in opened My Profile page in "My Profile" menu. Viewed my personal information and past orders that I have done.                                                                                                                                              | PASSED |
 | Update personal delivery information that will be used to prefill checkout form                                                                                                                                                                                                 | On my profile page filled in some fields regarding my personal information, clicked "Update information". Then tried to make a purchase and verified that same information gets prefilled in the checkout page.                                                            | PASSED |
 
+### Testing screenshots
+
+#### Desktop
+
 ![Homepage](README_files/home.png)
+![All Products](README_files/all_products_sorted_by_price.png)
+![Bed Products](README_files/bed_products.png)
+![Search Products](README_files/products_search.png)
+![Product Details](README_files/product_details.png)
+![Shopping Bag](README_files/shopping_bag.png)
+![Checkout page](README_files/checkout_page.png)
+![Checkout success](README_files/checkout_success.png)
+![News page](README_files/news_page.png)
+![Contact page](README_files/contact_page.png)
+![Add product](README_files/add_product.png)
+![Add news](README_files/add_news.png)
+![Login page](README_files/login_page.png)
+![Register page](README_files/register_page.png)
+
+#### Mobile
+
+![Mobile home](README_files/mobile_home.png)
+![Mobile shopping bag](README_files/mobile_shopping_bag.png)
+![Mobile checkout page](README_files/mobile_checkout_page.png)
+![Contact us page](README_files/contact_us_page.png)
+![Mobile my profile](README_files/mobile_myprofile.png)
 
 ### Testing using external tools
 
