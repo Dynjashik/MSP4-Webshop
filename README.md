@@ -182,6 +182,12 @@ The font-family "Lato" is used because of classical proportions to give the lett
 5. Modify or delete existing News Articles on the site.
 6. View contact forms submitted by users.
 
+### Future features
+1. Add possibility for authorised users to save products to favorites list and view it on Profile page.
+2. Create Promo Code functionality which allows admin create discounts for products. There will be a code phrase that user should enter when checking out to get a special discount.
+3. Improve contact form by allowing user specify what is the reason to contact admins, link order if nessesary, ask for a refund etc.
+4. Create Product Sets functionality: special category where user can buy a "bag of products" with a special price. Admin can combine multiple products into one possible purchase, give it a unique price, name and description.
+
 <span  id="technologies"></span>
 ## Technologies
 
@@ -219,7 +225,7 @@ Database design is shown on the picture below:
 [Github](https://github.com/) - for version control and store the code for the project.   
 [Gitpod](https://www.gitpod.io/) - for writing the code for the website and push it to Github.    
 [Heroku](https://id.heroku.com/login) – for deployment the project.  
-[Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/) - for verifying the hashed password and username.    
+[TinyPNG](https://tinypng.com/) - for reducing the size of images.     
 [Mockup generator](http://techsini.com/multi-mockup/index.php) - for testing responsive website on various devices.  
 [W3 Schools](https://www.w3schools.com/) - for HTML, CSS, JS, Python tips.  
 [Stackoverflow](stackoverflow.com) - for finding answers on questions.  
@@ -231,11 +237,10 @@ Database design is shown on the picture below:
 ### Codes used:
 
 Some of the code was taken from the sources:
-* [Stackoverflow](https://stackoverflow.com/) - 
-* [CodeInstitute course]() – 
-* [News page CSS style](https://www.web-eau.net/blog/10-latest-blog-html-css-snippets) -
-* [Create admin user in Django Tests](https://stackoverflow.com/questions/3495114/how-to-create-admin-user-in-django-tests-py) -
-* [CSRF token use in external JavaScript file](https://newbedev.com/403-forbidden-error-when-making-an-ajax-post-request-in-django-framework) -
+* [Stackoverflow](https://stackoverflow.com/questions/3495114/how-to-create-admin-user-in-django-tests-py) - for creating admin user in Django Tests.
+* [CodeInstitute course](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FSF_102+Q1_2020/courseware/4201818c00aa4ba3a0dae243725f6e32/d3188bf68530497aa5fba55d07a9d7d7/) – using example of project Boutique Ado for creating webshop.
+* [www.web-eau.net](https://www.web-eau.net/blog/10-latest-blog-html-css-snippets) - for CSS styling news page.  
+* [newbedev.com](https://newbedev.com/403-forbidden-error-when-making-an-ajax-post-request-in-django-framework) - CSRF token use in external JavaScript file
 
 <span  id="testing"></span>
 
@@ -245,6 +250,13 @@ For testing this project I used several different approaches:
  - Automatic testing using Django test framework
  - Manual Testing
  - Testing using external tools
+
+Superuser credentials:
+
+```
+username: admin
+password: admin
+```
 
 ### Automatic testing
 
@@ -274,10 +286,6 @@ Real Stripe payment are not configured yet. As for testing use the following car
 ```
 4242 4242 4242 4242
 ```
-
-#### Product data
-
-All products, its pictures, description and prices were taken from [Amazon.com](https://amazon.com/) and [Target.com](https://target.com/)
 
 #### User Stories
 | Story                                                                                    	| Action                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            	| Result 	|
@@ -315,8 +323,8 @@ Some features got covered by user stories testing. That's why in the following t
 | Feature                                                                                                                                                                                                                                                                         | Action                                                                                                                                                                                                                                                                     | Result |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|
 | Navigation bar on top of each page that consists of site logo, search bar, main navigation menu, menu entries to login/register for anonymous users, my account menu entry with a dropdown sub menu for authorized users, shopping bag menu entry with a total amount displayed | Clicked through all site pages, the menu exists with all functionality described                                                                                                                                                                                           | PASSED |
-| Responsive layout that is adapted to desktop and mobile screen sizes.                                                                                                                                                                                                           |                                                                                                                                                                                                                                                                            |        |
-| Supported by all of the most popular web browsers.                                                                                                                                                                                                                              |                                                                                                                                                                                                                                                                            |        |
+| Responsive layout that is adapted to desktop and mobile screen sizes.                                                                                                                                                                                                           | Webiste was tested on desktop 27inch screen, laptop 13 inch screen. Also mobile phones iPhone Xs, iPhone 11 and Xiaomi Redmi Note 9. In addition Google Chrome developer tools were used to check the site on different movile screens.                                                                                                                                                                                                                                                                           |  PASSED      |
+| Supported by all of the most popular web browsers.                                                                                                                                                                                                                              |   Most pages were viewed in Chrome, Microsoft Edge, Safari, Firefox and Opera we browsers                                                                                                                                                                                                                                                                          |    PASSED    |
 | Instant feedback from the site to the user with the help of pop-up messages when important actions take place.                                                                                                                                                                  | Notification messages on top right corner are informing the user through login/logout process, when any form is successfully processed or not, when doing modifications to shopping bag, when doing payments etc.                                                          | PASSED |
 | Search box where products can be found by name or description.                                                                                                                                                                                                                  | Typed partly name of a random product. Clicked "Search". The products was found. Typed in part of random product description. Clicked "Search". Searched product was found.                                                                                                | PASSED |
 | Sort products by price, name and categories, both ascending and descending.                                                                                                                                                                                                     | Tried all possible options in Sort dropdown on products page. Verified that sorting is done correct.                                                                                                                                                                       | PASSED |
@@ -446,6 +454,20 @@ As a suggested fix I added _.jshintrc_ file in root directory with the following
 }
 ```
 
+#### Google Chrome Lighthouse
+
+I used Lighthouse web developer tool from Google Chrome browser to improve the quality of web pages. Overall resuls are very good, however sometimes performance shows lower numbers, especially on mobile version, on pages with a lot of pictures and scripts loaded.
+
+##### Desktop home page
+![Lighthouse Desktop](README_files/lighthouse_desktop.png)
+<hr />
+
+
+##### Mobile all products page
+![Lighthouse Mobile](README_files/lighthouse_mobile.png)
+<hr />
+
+The site was tested across different browsers and screen sized to be sure in responsiveness and browser compatibility.: Chrome, Microsoft Edge, Safari, Firefox and Opera. It was also tested on mobile devices such as: iPhone Xs, iPhone 11, Xiaomi Redmi Note 9. In addition I used Google Chrome developr tools to view the site on different mobile screens.
 
 <span  id="knownbugs"></span>
 
@@ -453,16 +475,23 @@ As a suggested fix I added _.jshintrc_ file in root directory with the following
 
 #### Knows Bugs
 
-##### Increment/decrement buttons on shopping bag page, desktop version
+##### Increment/decrement buttons on shopping bag page
 
 There is a known bug that I didn't figure out how to fix. In order to reproduce it:
 1. Add any product to the shopping bag.
 2. Open shopping bag.
 3. Decrement product quantity lower than 1.
 
-Expected behaviour: "-" button gets disabled when the user tries to enter quantity less than 1 or more than 99. For some reason it is possible to do it here.
-Important to note that when you change to mobile version everything works fine. And also everything works (both desktop and mobile) on product detail page where same kind of widget is used.
-But when the user clicks "Update" with quantity less than 1 the product gets deleted from the shopping bag. Therefore it is impossible to buy a product with an incorrect amount.
+Expected behaviour: "-" button gets disabled when the user tries to enter quantity less than 1 or more than 99. For some reason it is possible to do it at checkout page.
+Important to note that:
+ * Desktop version of the site always has this bug
+ * Mobile version has it sometimes: for example on iPhone11 bug doesn't exist, on Xiaomi Redmi Note 9 it exists.
+ * Product details page has identical functionality with increase/decrease buttons and such bug was never found on both desktop and mobile.
+
+When the user clicks "Update" with quantity less than 1 the product gets deleted from the shopping bag. Therefore it is impossible to buy a product with an incorrect amount.
+I conclude that such bug is not critical and doesn't break major functionality.
+
+I tried different approaches and still struggling fixing this issue. The complicated part is that this bug is not very consistent and it makes it hard to identify the actual problem.
 
 ![IncrementBug](README_files/increment_bug.png)
 ![IncrementBug2](README_files/increment_bug2.png)
@@ -772,8 +801,7 @@ All content is written by developer Darya Belarusik.
 
 ### Media
 
-Image for background, product images were taken from:
-
+All products, its pictures, description and prices were taken from [Amazon.com](https://amazon.com/) and [Target.com](https://target.com/) 
 
 Logo of the website in navigation menu is created by Darya, using the image from the source [freedesignfile.com](https://freedesignfile.com/367673-baby-hero-logo-vector/)
 
