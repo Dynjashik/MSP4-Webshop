@@ -334,28 +334,83 @@ Some features got covered by user stories testing. That's why in the following t
 
 #### Desktop
 
+##### Homepage
 ![Homepage](README_files/home.png)
+<hr />
+
+##### All products
 ![All Products](README_files/all_products_sorted_by_price.png)
+<hr />
+
+##### Bed products
 ![Bed Products](README_files/bed_products.png)
+<hr />
+
+##### Search products
 ![Search Products](README_files/products_search.png)
+<hr />
+
+##### Product details
 ![Product Details](README_files/product_details.png)
+<hr />
+
+##### Shopping bag
 ![Shopping Bag](README_files/shopping_bag.png)
+<hr />
+
+##### Checkout
 ![Checkout page](README_files/checkout_page.png)
+<hr />
+
+##### Checkout success
 ![Checkout success](README_files/checkout_success.png)
+<hr />
+
+##### News
 ![News page](README_files/news_page.png)
+<hr />
+
+##### Contact
 ![Contact page](README_files/contact_page.png)
+<hr />
+
+##### Add product
 ![Add product](README_files/add_product.png)
+<hr />
+
+##### Add news
 ![Add news](README_files/add_news.png)
+<hr />
+
+##### Login
 ![Login page](README_files/login_page.png)
+<hr />
+
+##### Register
 ![Register page](README_files/register_page.png)
+<hr />
 
 #### Mobile
 
+##### Home
 ![Mobile home](README_files/mobile_home.png)
+<hr />
+
+##### Shopping bag
 ![Mobile shopping bag](README_files/mobile_shopping_bag.png)
+<hr />
+
+##### Checkout page
 ![Mobile checkout page](README_files/mobile_checkout_page.png)
+<hr />
+
+##### Contact page
 ![Contact us page](README_files/contact_us_page.png)
+<hr />
+
+##### My profile
 ![Mobile my profile](README_files/mobile_myprofile.png)
+<hr />
 
 ### Testing using external tools
 
