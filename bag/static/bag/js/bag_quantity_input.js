@@ -1,3 +1,7 @@
+// Credits: Code Institute Software Development course: Boutique Ado project
+//video lectures:
+//https://learn.codeinstitute.net/ci_program/diplomainsoftwaredevelopment
+
 // Increment quantity
 $('.increment-qty').click(function (e) {
     e.preventDefault();

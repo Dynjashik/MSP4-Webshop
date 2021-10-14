@@ -1,3 +1,7 @@
+// Credits: Code Institute Software Development course: Boutique Ado project
+// video lectures:
+// https://learn.codeinstitute.net/ci_program/diplomainsoftwaredevelopment
+
 let countrySelected = $('#id_default_country').val();
 
 if (!countrySelected) {

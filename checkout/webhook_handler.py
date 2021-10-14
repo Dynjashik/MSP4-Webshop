@@ -1,3 +1,7 @@
+# Credits: Code Institute Software Development course: Boutique Ado project
+# video lectures:
+# https://learn.codeinstitute.net/ci_program/diplomainsoftwaredevelopment
+
 import json
 import time
 from django.http import HttpResponse

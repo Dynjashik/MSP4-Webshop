@@ -1,3 +1,7 @@
+# Credits: Code Institute Software Development course: Boutique Ado project
+# video lectures:
+# https://learn.codeinstitute.net/ci_program/diplomainsoftwaredevelopment
+
 from django.forms.widgets import ClearableFileInput
 from django.utils.translation import gettext_lazy as _
 
