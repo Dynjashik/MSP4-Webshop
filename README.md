@@ -251,13 +251,6 @@ For testing this project I used several different approaches:
  - Manual Testing
  - Testing using external tools
 
-Superuser credentials:
-
-```
-username: admin
-password: admin
-```
-
 ### Automatic testing
 
 For each app in the project there are test_views.py and test_forms.py files. In order to run for each app use:
